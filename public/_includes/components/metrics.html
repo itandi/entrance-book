@@ -1,0 +1,14 @@
+<section id="metrics" class="section section--dark reveal">
+    <div class="container">
+        <h2 class="section-title">Impact & Traction</h2>
+        <div class="metrics-grid">
+            {% for metric in site.data.metrics %}
+            <div class="metric-item">
+                <span class="number">{{ metric.number }}</span>
+                <span class="label">{{ metric.label }}</span>
+                <p class="description">{{ metric.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

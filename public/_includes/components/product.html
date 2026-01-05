@@ -1,0 +1,25 @@
+<section id="product" class="section section--gray reveal">
+    <div class="container">
+        <h2 class="section-title">Business & Product</h2>
+        <h3>{{ site.data.products.lead }}</h3>
+        <p>{{ site.data.products.description }}</p>
+        <div class="product-grid">
+            {% for item in site.data.products.items %}
+            <div class="product-card">
+                <h4>{{ item.title }}</h4>
+                <p class="service-name">{{ item.service_name }}</p>
+                {% if item.list %}
+                <ul class="product-list">
+                    {% for li in item.list %}
+                    <li>{{ li }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% if item.description %}
+                <p>{{ item.description }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

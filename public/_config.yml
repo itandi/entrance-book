@@ -1,0 +1,14 @@
+title: エンジニア採用エントランスページ | イタンジ株式会社
+description: テクノロジーで不動産取引をなめらかにするイタンジのエンジニア採用情報。
+baseurl: ""
+url: ""
+google_fonts:
+  - family: Inter
+    weights: "400;700"
+  - family: Noto Sans JP
+    weights: "400;700"
+
+collections:
+  sections:
+    output: false
+    sort_by: name

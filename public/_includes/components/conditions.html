@@ -1,0 +1,27 @@
+<section id="conditions" class="section reveal">
+    <div class="container">
+        <h2 class="section-title">HR & Conditions</h2>
+        <div class="evaluation-system">
+            <h3>{{ site.data.benefits.evaluation.title }}</h3>
+            <div class="conditions-grid">
+                {% for card in site.data.benefits.evaluation.cards %}
+                <div class="condition-card">
+                    <h4>{{ card.title }}</h4>
+                    <p>{{ card.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="benefits-list mt-5">
+            <h3>{{ site.data.benefits.benefits.title }}</h3>
+            <div class="tech-layers">
+                {% for layer in site.data.benefits.benefits.layers %}
+                <div class="tech-layer">
+                    <h5>{{ layer.title }}</h5>
+                    <p>{{ layer.items }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

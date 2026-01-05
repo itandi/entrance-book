@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  site:
+    image: jekyll/jekyll:latest
+    command: jekyll serve --livereload --force_polling --source /srv/jekyll --destination /srv/jekyll/_site
+    ports:
+      - "4000:4000"
+      - "35729:35729" # LiveReload port
+    volumes:
+      - ./public:/srv/jekyll
+      - ./public/Gemfile:/srv/jekyll/Gemfile
+      - ./public/Gemfile.lock:/srv/jekyll/Gemfile.lock
+    environment:
+      - JEKYLL_ENV=development
