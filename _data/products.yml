@@ -1,13 +1,17 @@
 product_categories:
   - title: "賃貸管理の業務支援"
     service_name: "ITANDI 賃貸管理"
+    url: "https://service.itandi.co.jp/services/kanri"
     scope: ["入居時業務（物件・精算・家主管理）", "入居者管理", "空室時業務（原状回復・物件出稿・内見受付）"]
   - title: "賃貸仲介の業務支援"
     service_name: "ITANDI 賃貸仲介"
+    url: "https://service.itandi.co.jp/services/chukai"
     scope: ["接客業務（物件出稿・反響対応・内見調整）", "申込・契約対応", "店舗運営業務（データ分析）"]
   - title: "不動産売買の業務支援"
     service_name: "ITANDI 売買"
+    url: "https://service.itandi.co.jp/services/baibai"
     scope: ["売主仲介業務（査定・追客・営業報告）", "買主仲介業務（物件出稿・内見調整・契約対応）"]
   - title: "リアルタイム不動産業者間サイト"
     service_name: "ITANDI BB"
+    url: "https://service.itandi.co.jp/services/bb"
     description: "入居申込と空室情報を即座に同期。「おとり物件」を削減し、リーシング業務をオンラインで完結させるインフラ。"

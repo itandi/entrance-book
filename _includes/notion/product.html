@@ -22,6 +22,14 @@
             {% if item.description %}
             <p style="font-size: 0.875rem; margin-top: 8px;">{{ item.description }}</p>
             {% endif %}
+            {% if item.url %}
+            <div style="margin-top: 16px;">
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"
+                    style="font-size: 0.875rem; color: var(--notion-secondary-text); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                    サービスサイト <span>↗</span>
+                </a>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
