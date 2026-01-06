@@ -1,0 +1,34 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Simulated/Fetch Blog Posts
+    const blogContainer = document.getElementById('blog-posts');
+    if (blogContainer) {
+        const rssUrl = 'https://tech.itandi.co.jp/rss';
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'ok') {
+                    const posts = data.items.slice(0, 3);
+                    blogContainer.innerHTML = posts.map(post => `
+                        <a href="${post.link}" target="_blank" style="text-decoration: none;">
+                            <div class="notion-card" style="height: 100%; display: flex; flex-direction: column;">
+                                <div style="font-size: 0.75rem; color: var(--notion-secondary-text); margin-bottom: 8px;">
+                                    ${post.pubDate.split(' ')[0].replace(/-/g, '.')}
+                                </div>
+                                <div class="notion-card-title" style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 0;">
+                                    ${post.title}
+                                </div>
+                            </div>
+                        </a>
+                    `).join('');
+                } else {
+                    throw new Error('Failed to fetch RSS');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching blog posts:', error);
+                blogContainer.innerHTML = '<p style="font-size: 0.875rem; color: var(--notion-red);">最新記事の取得に失敗しました。</p>';
+            });
+    }
+});

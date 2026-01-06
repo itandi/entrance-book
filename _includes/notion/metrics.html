@@ -1,0 +1,9 @@
+<div class="notion-grid-3">
+    {% for metric in site.data.metrics %}
+    <div class="notion-card">
+        <div class="notion-card-title" style="color: #F06A33; font-size: 1.5rem;">{{ metric.number }}</div>
+        <div style="font-weight: 600; margin-bottom: 4px;">{{ metric.label }}</div>
+        <div class="notion-card-description">{{ metric.description }}</div>
+    </div>
+    {% endfor %}
+</div>

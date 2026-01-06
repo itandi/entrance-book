@@ -1,0 +1,30 @@
+<div class="notion-section">
+    <hr class="notion-divider">
+    <h2>Organization & Team</h2>
+    <h3>100名体制を目指す、エンジニアリング組織</h3>
+    <p>イタンジは現在、さらなる事業拡大に向けてエンジニア組織を100名体制へと拡大するフェーズにあります。各プロダクトを独立したユニットとして構成し、意思決定のスピードとドメインへの深いコミットを両立しています。</p>
+
+    {% for member in site.data.members.leaders %}
+    <div class="notion-member-featured">
+        <div class="notion-member-image">
+            <img src="{{ member.image | relative_url }}" alt="{{ member.name }}">
+        </div>
+        <div class="notion-member-info">
+            <h3>{{ member.name }} <span class="notion-member-role">{{ member.role }}</span></h3>
+            <div class="notion-member-profile">{{ member.profile }}</div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="notion-callout" style="margin-top: 2em;">
+        <div class="notion-callout-icon">💡</div>
+        <div class="notion-callout-content">
+            <strong>柔軟でプロフェッショナルな働き方</strong>
+            <ul class="notion-list" style="margin-bottom: 0;">
+                <li class="notion-list-item">ハイブリッドワーク</li>
+                <li class="notion-list-item">フレックスタイム制</li>
+                <li class="notion-list-item">六本木グランドタワー内オフィス</li>
+            </ul>
+        </div>
+    </div>
+</div>

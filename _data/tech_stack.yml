@@ -1,0 +1,9 @@
+tech_layers:
+  - layer: "Application & Frontend"
+    items: ["Ruby on Rails", "React", "TypeScript", "MySQL"]
+  - layer: "ETL & Data Processing"
+    items: ["digdag", "embulk", "Akka", "OpenSearch", "AWS DMS"]
+  - layer: "Infrastructure & Platform"
+    items: ["AWS", "Terraform"]
+  - layer: "Data Analysis Foundation"
+    items: ["Apache Airflow", "Google BigQuery"]

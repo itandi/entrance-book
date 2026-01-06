@@ -1,0 +1,31 @@
+<div class="notion-section">
+    <hr class="notion-divider">
+    <h2>Technology & Engineering</h2>
+    <p>イタンジのプロダクトは、お預かりした膨大な物件データを高速かつ正確に処理する堅牢なアーキテクチャで構成されています。</p>
+
+    <div class="notion-grid-2">
+        {% for layer in site.data.tech_stack.tech_layers %}
+        <div class="notion-card">
+            <div class="notion-card-title" style="font-size: 1rem;">{{ layer.layer }}</div>
+            <div class="notion-card-description">
+                {% for item in layer.items %}
+                {{ item }}{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-top: 3em;">
+        <h3>ITANDI Tech Blog</h3>
+        <p style="font-size: 0.875rem; color: var(--notion-secondary-text); margin-bottom: 1.5em;">
+            最新の技術スタックや開発の裏側を発信しています。</p>
+        <div id="blog-posts" class="notion-grid-3">
+            <!-- Posts will be loaded here by main.js -->
+            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">Loading latest posts...</p>
+        </div>
+        <div style="margin-top: 1.5em; font-size: 0.875rem;">
+            <a href="https://tech.itandi.co.jp/" target="_blank">技術ブログをもっと見る →</a>
+        </div>
+    </div>
+</div>
