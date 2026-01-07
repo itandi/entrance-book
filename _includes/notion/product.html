@@ -1,6 +1,6 @@
 <div class="notion-section">
     <hr class="notion-divider">
-    <h2>Business & Product</h2>
+    <h2>Product</h2>
     <p style="color: var(--notion-secondary-text); margin-bottom: 2em;">
         イタンジは、不動産取引の全工程をカバーするプロダクトラインナップを展開することで、<strong>不動産取引をなめらかにしています</strong>。<br>単一のSaaSを提供するのではなく、管理・仲介・売買、そして業者間流通のすべてを繋ぐことで、業界全体の体験を再定義しています。
     </p>
@@ -25,4 +25,76 @@
         </div>
         {% endfor %}
     </div>
+
+    <div style="margin-top: 4em;">
+        <hr class="notion-divider">
+        <div class="notion-grid-2" style="align-items: center; gap: 4em;">
+            <div>
+                <h2 style="margin-top: 0;">シェアNo.1が生み出す、<br>「日本で一番鮮度の高い」不動産DB</h2>
+                <p style="font-size: 0.95rem; line-height: 1.6; margin: 1.5em 0;">
+                    なぜ「電子申し込み」のシェアNo.1が重要なのか。それは<strong>「物件が埋まった瞬間」のデータをイタンジが最も早く知ることができる</strong>からです。
+                </p>
+                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--notion-secondary-text);">
+                    不動産業界の最大の課題は「情報の鮮度」です。アナログな取引ではタイムラグが発生し、「ネット上では空室なのに、電話すると埋まっている」という体験がなくなりません。
+                    私たちは年間100万件を超えるトランザクションを処理することで、日本中の物件情報の「リアルタイム化」を実現しています。
+                </p>
+            </div>
+
+            <!-- Data Flywheel Visualization -->
+            <div class="flywheel-container"
+                style="background: var(--notion-gray-bg); padding: 2em; border-radius: 12px; text-align: center;">
+                <div style="font-weight: 700; color: var(--notion-blue); margin-bottom: 2em; font-size: 1.1rem;">
+                    DATA FLYWHEEL</div>
+
+                <div style="position: relative; display: inline-block;">
+                    <!-- Circular Flow -->
+                    <div
+                        style="width: 240px; height: 240px; border: 3px dashed var(--notion-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: spin 20s linear infinite;">
+                    </div>
+
+                    <!-- Nodes -->
+                    <div
+                        style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        電子申し込み<br><span style="color: var(--notion-blue);">シェアNo.1</span>
+                    </div>
+                    <div
+                        style="position: absolute; top: 120px; right: -70px; transform: translateY(-50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        在庫情報の<br><span style="color: var(--notion-blue);">リアルタイム反映</span>
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        信頼性の高い<br><span style="color: var(--notion-blue);">インフラ</span>
+                    </div>
+                    <div
+                        style="position: absolute; top: 120px; left: -70px; transform: translateY(-50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
+                        さらなる<br><span style="color: var(--notion-blue);">SaaS導入拡大</span>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 3em; font-size: 0.85rem; font-weight: 600; color: var(--notion-secondary-text);">
+                    SaaS利用が増えるほどデータが集まり、<br>プラットフォームが強くなる循環構造
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .flywheel-container {
+                margin: 4em 0;
+                transform: scale(0.8);
+            }
+        }
+    </style>
 </div>

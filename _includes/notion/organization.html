@@ -1,30 +1,151 @@
 <div class="notion-section">
     <hr class="notion-divider">
     <h2>Organization & Team</h2>
-    <h3>100名体制を目指す、エンジニアリング組織</h3>
-    <p>イタンジは現在、さらなる事業拡大に向けてエンジニア組織を100名体制へと拡大するフェーズにあります。各プロダクトを独立したユニットとして構成し、意思決定のスピードとドメインへの深いコミットを両立しています。</p>
 
-    {% for member in site.data.members.leaders %}
-    <div class="notion-member-featured">
-        <div class="notion-member-image">
-            <img src="{{ member.image | relative_url }}" alt="{{ member.name }}">
+    <div class="notion-grid-2" style="margin-bottom: 3em;">
+        <div class="notion-card">
+            <div class="notion-card-title">エンジニア組織規模</div>
+            <div style="font-size: 2rem; font-weight: 700; margin: 8px 0;">68名</div>
+            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">業務委託・デザイナー等含む</p>
         </div>
-        <div class="notion-member-info">
-            <h3>{{ member.name }} <span class="notion-member-role">{{ member.role }}</span></h3>
-            <div class="notion-member-profile">{{ member.profile }}</div>
+        <div class="notion-card">
+            <div class="notion-card-title">体制</div>
+            <div style="font-size: 1.25rem; font-weight: 700; margin: 8px 0;">CTO Office ＋ 8ユニット</div>
+            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">フラットな構成による迅速な意思決定</p>
         </div>
     </div>
-    {% endfor %}
 
-    <div class="notion-callout" style="margin-top: 2em;">
-        <div class="notion-callout-icon">💡</div>
+    <div class="notion-callout" style="margin-bottom: 3em;">
+        <div class="notion-callout-icon">🚀</div>
         <div class="notion-callout-content">
-            <strong>柔軟でプロフェッショナルな働き方</strong>
-            <ul class="notion-list" style="margin-bottom: 0;">
-                <li class="notion-list-item">ハイブリッドワーク</li>
-                <li class="notion-list-item">フレックスタイム制</li>
-                <li class="notion-list-item">六本木グランドタワー内オフィス</li>
+            <strong>現在のフェーズ: 68名から100名への変革期</strong>
+            <p style="margin-top: 8px;">
+                これまでの「プレイングマネージャーが全てを見る」体制から、100名規模を見据えた「分業・専門化」への移行期にあります。仕組み自体を一緒に作り上げるリーダー層・スペシャリスト層を求めています。</p>
+        </div>
+    </div>
+
+    <h3>Management Structure: 70名の壁を越える分業型組織</h3>
+    <p style="color: var(--notion-secondary-text); margin-bottom: 2em;">
+        「1人の万能なマネージャー」に依存しない。得意領域で組織を牽引する3つの役割への分権化を進めています。
+    </p>
+
+    <!-- Management Evolution Diagram -->
+    <div class="management-evolution"
+        style="margin-bottom: 3em; background: var(--notion-gray-bg); padding: 2em; border-radius: 8px;">
+        <div class="notion-grid-2" style="align-items: center; gap: 4em;">
+            <div style="text-align: center;">
+                <div style="font-weight: 600; margin-bottom: 1em; color: var(--notion-secondary-text);">Before:
+                    従来のマネージャー</div>
+                <div class="mgmt-icon-before"
+                    style="position: relative; width: 120px; height: 120px; margin: 0 auto; background: #fff; border: 2px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    👤
+                    <div
+                        style="position: absolute; top: -10px; right: -10px; background: var(--notion-red); color: #fff; font-size: 0.7rem; padding: 4px 8px; border-radius: 12px; font-weight: 700;">
+                        限界</div>
+                </div>
+                <div style="margin-top: 1em; font-size: 0.8rem; line-height: 1.4;">People + Delivery +
+                    Tech<br>全てを1人で抱える重荷</div>
+            </div>
+            <div style="text-align: center; position: relative;">
+                <div style="font-weight: 600; margin-bottom: 1em; color: var(--notion-blue);">After: 3つの専門機能への分権</div>
+                <div class="mgmt-icon-after" style="display: flex; justify-content: center; gap: -15px;">
+                    <div class="mgmt-circle"
+                        style="width: 80px; height: 80px; background: rgba(54, 162, 235, 0.1); border: 2px solid var(--notion-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3; font-size: 1.5rem; margin-right: -20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                        title="People">👥</div>
+                    <div class="mgmt-circle"
+                        style="width: 80px; height: 80px; background: rgba(255, 159, 64, 0.1); border: 2px solid #ff9f40; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; font-size: 1.5rem; margin-right: -20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                        title="Delivery">🚀</div>
+                    <div class="mgmt-circle"
+                        style="width: 80px; height: 80px; background: rgba(255, 99, 132, 0.1); border: 2px solid var(--notion-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1; font-size: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                        title="Systems">🛠️</div>
+                </div>
+                <div style="margin-top: 1em; font-size: 0.8rem; line-height: 1.4; font-weight: 600;">
+                    強みを活かし、<br>相乗効果を生む体制</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notion-grid-3">
+        <div class="notion-card" style="border-top: 4px solid var(--notion-blue);">
+            <div class="notion-card-title">People Management<br><span
+                    style="font-size: 0.8rem; font-weight: 400; color: var(--notion-secondary-text);">(組織・人)</span>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--notion-blue); font-weight: 600; margin-bottom: 8px;">
+                「人の成長にコミットする」</p>
+            <ul class="notion-list" style="font-size: 0.875rem; margin-left: 0;">
+                <li class="notion-list-item">1on1・キャリア支援</li>
+                <li class="notion-list-item">評価・フィードバック</li>
+                <li class="notion-list-item">採用・カルチャー醸成</li>
             </ul>
+        </div>
+        <div class="notion-card" style="border-top: 4px solid #ff9f40;">
+            <div class="notion-card-title">Delivery Management<br><span
+                    style="font-size: 0.8rem; font-weight: 400; color: var(--notion-secondary-text);">(進行・デリバリー)</span>
+            </div>
+            <p style="font-size: 0.75rem; color: #ff9f40; font-weight: 600; margin-bottom: 8px;">「コトの推進にコミットする」</p>
+            <ul class="notion-list" style="font-size: 0.875rem; margin-left: 0;">
+                <li class="notion-list-item">スクラム運営・進行管理</li>
+                <li class="notion-list-item">リリース計画・ロードマップ</li>
+                <li class="notion-list-item">ステークホルダー調整</li>
+            </ul>
+        </div>
+        <div class="notion-card" style="border-top: 4px solid var(--notion-red);">
+            <div class="notion-card-title">Systems Management<br><span
+                    style="font-size: 0.8rem; font-weight: 400; color: var(--notion-secondary-text);">(技術・品質)</span>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--notion-red); font-weight: 600; margin-bottom: 8px;">
+                「システムの進化にコミットする」</p>
+            <ul class="notion-list" style="font-size: 0.875rem; margin-left: 0;">
+                <li class="notion-list-item">品質保証・アーキテクチャ設計</li>
+                <li class="notion-list-item">技術的負債の解消・標準化</li>
+                <li class="notion-list-item">開発プロセス改善・自動化</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="notion-callout"
+        style="margin-top: 2em; background-color: rgba(255, 99, 132, 0.05); border: 1px solid rgba(255, 99, 132, 0.2);">
+        <div class="notion-callout-icon">💡</div>
+        <div class="notion-callout-content" style="font-size: 0.9rem; line-height: 1.6;">
+            <strong>技術のスペシャリストが、コードから離れずに貢献できる道を。</strong><br>
+            組織が50名を超え、100名規模を目指すフェーズにおいて、従来のプレイングマネージャーモデルは限界を迎えます。
+            イタンジでは、「人を見るのは苦手だが、開発品質や技術水準の引き上げには責任を持ちたい」というエンジニアがリーダーシップを発揮できる環境を、『Systems Management』として定義しました。
+        </div>
+    </div>
+
+    <div style="margin-top: 3em;">
+        <h3>CTO大原の「本音」</h3>
+        {% for member in site.data.members.leaders %}
+        <div class="notion-member-featured" style="background-color: var(--notion-hover); border: none;">
+            <div class="notion-member-image">
+                <img src="{{ member.image | relative_url }}" alt="{{ member.name }}">
+            </div>
+            <div class="notion-member-info">
+                <h3>{{ member.name }} <span class="notion-member-role">{{ member.role }}</span></h3>
+                <div class="notion-blockquote"
+                    style="margin: 1em 0; font-style: italic; font-size: 1rem; color: var(--notion-text);">
+                    「{{ member.candid_message }}」
+                </div>
+                <div class="notion-member-profile" style="font-size: 0.875rem;">{{ member.profile }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="notion-grid-2" style="margin-top: 3em;">
+        <div class="notion-callout">
+            <div class="notion-callout-icon">👤</div>
+            <div class="notion-callout-content">
+                <strong>求める人物像</strong>
+                <p style="font-size: 0.875rem;">「出来上がった組織」に入るのではなく、過渡期の組織で「仕組み自体」を作りたい方。</p>
+            </div>
+        </div>
+        <div class="notion-callout">
+            <div class="notion-callout-icon">🏠</div>
+            <div class="notion-callout-content">
+                <strong>働き方 (Hybrid Style)</strong>
+                <p style="font-size: 0.875rem;">週3日程度の出社を推奨。濃密なコミュニケーションによるカルチャー醸成を重視しています。（家庭の事情等には柔軟に対応）</p>
+            </div>
         </div>
     </div>
 </div>
