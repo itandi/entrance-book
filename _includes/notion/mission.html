@@ -1,0 +1,19 @@
+<div class="notion-section">
+    <hr class="notion-divider">
+    <h2>{{ site.data.mission.main_title }}</h2>
+    <p>{{ site.data.mission.lead }}</p>
+
+    <div class="notion-callout">
+        <div class="notion-callout-icon">🎯</div>
+        <div class="notion-callout-content">
+            {{ site.data.mission.sub_lead }}
+        </div>
+    </div>
+
+    <h3>3つの問い、1つの答え</h3>
+    <ul class="notion-list">
+        {% for item in site.data.mission.3_questions %}
+        <li class="notion-list-item"><strong>{{ item.q }}</strong>: {{ item.a }}</li>
+        {% endfor %}
+    </ul>
+</div>

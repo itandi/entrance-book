@@ -8,8 +8,6 @@ services:
       - "4000:4000"
       - "35729:35729" # LiveReload port
     volumes:
-      - ./public:/srv/jekyll
-      - ./public/Gemfile:/srv/jekyll/Gemfile
-      - ./public/Gemfile.lock:/srv/jekyll/Gemfile.lock
+      - .:/srv/jekyll
     environment:
       - JEKYLL_ENV=development

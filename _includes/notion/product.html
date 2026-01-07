@@ -1,0 +1,28 @@
+<div class="notion-section">
+    <hr class="notion-divider">
+    <h2>Business & Product</h2>
+    <p style="color: var(--notion-secondary-text); margin-bottom: 2em;">
+        イタンジは、不動産取引の全工程をカバーするプロダクトラインナップを展開することで、<strong>不動産取引をなめらかにしています</strong>。<br>単一のSaaSを提供するのではなく、管理・仲介・売買、そして業者間流通のすべてを繋ぐことで、業界全体の体験を再定義しています。
+    </p>
+
+    <div class="notion-grid-2">
+        {% for item in site.data.products.product_categories %}
+        <div class="notion-card">
+            <div
+                style="font-size: 0.75rem; color: var(--notion-secondary-text); text-transform: uppercase; font-weight: 600;">
+                {{ item.service_name }}</div>
+            <div class="notion-card-title">{{ item.title }}</div>
+            {% if item.scope %}
+            <ul class="notion-list" style="margin: 8px 0; font-size: 0.875rem;">
+                {% for li in item.scope %}
+                <li class="notion-list-item">{{ li }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if item.description %}
+            <p style="font-size: 0.875rem; margin-top: 8px;">{{ item.description }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
