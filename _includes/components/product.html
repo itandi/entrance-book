@@ -18,6 +18,11 @@
                 {% if item.description %}
                 <p>{{ item.description }}</p>
                 {% endif %}
+                {% if item.url %}
+                <div style="margin-top: 12px; font-size: 0.8rem;">
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">サービスサイト ↗</a>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
