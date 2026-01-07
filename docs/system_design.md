@@ -322,7 +322,7 @@ product_categories:
 
 ### _sections/02-product.md
 ---
-title: "Business & Product"
+title: "Product"
 slug: "product"
 order: 2
 ---
