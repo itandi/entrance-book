@@ -113,20 +113,25 @@
         </div>
     </div>
 
-    <div style="margin-top: 3em;">
-        <h3>CTO大原の「本音」</h3>
+    <div style="margin-top: 4em;">
+        <h3>Message from CTO</h3>
         {% for member in site.data.members.leaders %}
-        <div class="notion-member-featured" style="background-color: var(--notion-hover); border: none;">
-            <div class="notion-member-image">
-                <img src="{{ member.image | relative_url }}" alt="{{ member.name }}">
-            </div>
-            <div class="notion-member-info">
-                <h3>{{ member.name }} <span class="notion-member-role">{{ member.role }}</span></h3>
-                <div class="notion-blockquote"
-                    style="margin: 1em 0; font-style: italic; font-size: 1rem; color: var(--notion-text);">
-                    「{{ member.candid_message }}」
+        <div class="cto-message-container">
+            <div class="cto-message-header">
+                <div class="cto-message-image-wrapper">
+                    <img src="{{ member.image | relative_url }}" alt="{{ member.name }}" class="cto-message-image">
+                    <div class="cto-message-author">
+                        <div class="cto-message-name">{{ member.name }}</div>
+                        <div class="cto-message-role">{{ member.role }}</div>
+                    </div>
                 </div>
-                <div class="notion-member-profile" style="font-size: 0.875rem;">{{ member.profile }}</div>
+                <div class="cto-message-headline">
+                    「守り」のマネジメントはいらない。<br>
+                    この国の"不動産インフラ"を、技術で再定義するリーダーを求む。
+                </div>
+            </div>
+            <div class="cto-message-body">
+                {{ member.candid_message | markdownify }}
             </div>
         </div>
         {% endfor %}
