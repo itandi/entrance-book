@@ -2,5 +2,5 @@
 title: "Technology & Engineering"
 slug: "technology"
 order: 3
-component: notion/technology.html
+component: components/technology.html
 ---

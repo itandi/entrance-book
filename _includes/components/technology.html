@@ -51,3 +51,15 @@
         </div>
     </div>
 </div>
+
+<div class="notion-section">
+    <h3>開発文化</h3>
+    <p>イタンジのエンジニアリング組織を支える文化と実践をご紹介します。</p>
+
+    <div class="tag-cloud-container">
+        {% for tag in site.data.dev_culture.tags %}
+        <span class="tag-cloud-item tag-{{ tag.size }}">{{ tag.name }}</span>
+        {% endfor %}
+    </div>
+    <p>※詳しくはカジュアル面談で説明いたします。</p>
+</div>

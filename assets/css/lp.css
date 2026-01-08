@@ -62,7 +62,8 @@ body {
 }
 
 .page-title {
-    font-size: 40px;
+    color: var(--notion-secondary-text);
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: 8px;
     padding-top: 48px;
@@ -553,5 +554,73 @@ details.notion-toggle[open] summary::before {
 
     .vision-connector {
         display: none;
+    }
+}
+
+/* Tag Cloud Styles */
+.tag-cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+    background-color: var(--notion-gray-bg);
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.tag-cloud-item {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--notion-bg);
+    border: 1px solid var(--notion-border);
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.tag-cloud-item:hover {
+    background-color: var(--notion-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tag size variations */
+.tag-cloud-item.tag-small {
+    font-size: 0.875rem;
+    color: var(--notion-secondary-text);
+}
+
+.tag-cloud-item.tag-medium {
+    font-size: 1.125rem;
+    color: var(--notion-text);
+}
+
+.tag-cloud-item.tag-large {
+    font-size: 1.5rem;
+    color: var(--notion-red);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .tag-cloud-container {
+        padding: 2rem 1rem;
+        gap: 12px 16px;
+    }
+
+    .tag-cloud-item.tag-small {
+        font-size: 0.75rem;
+    }
+
+    .tag-cloud-item.tag-medium {
+        font-size: 1rem;
+    }
+
+    .tag-cloud-item.tag-large {
+        font-size: 1.25rem;
     }
 }

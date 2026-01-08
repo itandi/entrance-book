@@ -1,15 +1,27 @@
 <div class="notion-section">
     <hr class="notion-divider">
-    <h2>不動産取引の未来を、共に創る</h2>
 
-    <div class="notion-blockquote">
-        ユーザーにとって価値のある開発を
+    <h2>Message from CTO</h2>
+    {% for member in site.data.members.leaders %}
+    <div class="cto-message-container">
+        <div class="cto-message-header">
+            <div class="cto-message-image-wrapper">
+                <img src="{{ member.image | relative_url }}" alt="{{ member.name }}" class="cto-message-image">
+                <div class="cto-message-author">
+                    <div class="cto-message-name">{{ member.name }}</div>
+                    <div class="cto-message-role">{{ member.role }}</div>
+                </div>
+            </div>
+            <div class="cto-message-headline">
+                不動産取引の未来を、共に創る<br>
+            </div>
+        </div>
+        <div class="cto-message-body">
+            {{ member.candid_message | markdownify }}
+        </div>
     </div>
-    <p>イタンジが目指しているのは、単なる業務効率化ではありません。私たちはオープンプラットフォーム戦略を掲げ、不動産会社、オーナー、そして入居者がなめらかに繋がる「ITANDI経済圏」を創り上げようとしています。</p>
+    {% endfor %}
 
-    <h4>AI時代の「質の深化」</h4>
-    <p>AIによって開発スピードが上がる現代だからこそ、私たちは「質の深化」を求めています。単にコードを書くのではなく、AIを壁打ち相手にしながら、人間ひとりでは見落としていたエッジケースに気づき、新しい視点を得る。一人ひとりの知見をチームのナレッジへ昇華させ、最終的に「本当に価値のあるもの」を届けるのが私たちの開発哲学です。
-    </p>
 
     <div class="notion-callout" style="background-color: #e7f3ff; margin-top: 3em;">
         <div class="notion-callout-icon">🚀</div>

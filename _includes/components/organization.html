@@ -6,7 +6,7 @@
         <div class="notion-card">
             <div class="notion-card-title">エンジニア組織規模</div>
             <div style="font-size: 2rem; font-weight: 700; margin: 8px 0;">68名</div>
-            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">業務委託・デザイナー等含む</p>
+            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">業務委託等含む</p>
         </div>
         <div class="notion-card">
             <div class="notion-card-title">体制</div>
@@ -113,44 +113,5 @@
         </div>
     </div>
 
-    <div style="margin-top: 4em;">
-        <h3>Message from CTO</h3>
-        {% for member in site.data.members.leaders %}
-        <div class="cto-message-container">
-            <div class="cto-message-header">
-                <div class="cto-message-image-wrapper">
-                    <img src="{{ member.image | relative_url }}" alt="{{ member.name }}" class="cto-message-image">
-                    <div class="cto-message-author">
-                        <div class="cto-message-name">{{ member.name }}</div>
-                        <div class="cto-message-role">{{ member.role }}</div>
-                    </div>
-                </div>
-                <div class="cto-message-headline">
-                    「守り」のマネジメントはいらない。<br>
-                    この国の"不動産インフラ"を、技術で再定義するリーダーを求む。
-                </div>
-            </div>
-            <div class="cto-message-body">
-                {{ member.candid_message | markdownify }}
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 
-    <div class="notion-grid-2" style="margin-top: 3em;">
-        <div class="notion-callout">
-            <div class="notion-callout-icon">👤</div>
-            <div class="notion-callout-content">
-                <strong>求める人物像</strong>
-                <p style="font-size: 0.875rem;">「出来上がった組織」に入るのではなく、過渡期の組織で「仕組み自体」を作りたい方。</p>
-            </div>
-        </div>
-        <div class="notion-callout">
-            <div class="notion-callout-icon">🏠</div>
-            <div class="notion-callout-content">
-                <strong>働き方 (Hybrid Style)</strong>
-                <p style="font-size: 0.875rem;">週3日程度の出社を推奨。濃密なコミュニケーションによるカルチャー醸成を重視しています。（家庭の事情等には柔軟に対応）</p>
-            </div>
-        </div>
-    </div>
 </div>
