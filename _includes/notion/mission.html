@@ -1,19 +1,62 @@
 <div class="notion-section">
     <hr class="notion-divider">
-    <h2>{{ site.data.mission.main_title }}</h2>
-    <p>{{ site.data.mission.lead }}</p>
 
-    <div class="notion-callout">
-        <div class="notion-callout-icon">🎯</div>
-        <div class="notion-callout-content">
-            {{ site.data.mission.sub_lead }}
+    <!-- MISSION -->
+    <section style="margin-bottom: 4rem;">
+        <span class="notion-mission-label">{{ site.data.mission.mission.title }}</span>
+        <h2 style="font-size: 2.25rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
+            {{ site.data.mission.mission.main_copy }}
+        </h2>
+        <div class="notion-callout" style="background-color: var(--notion-hover); padding: 1.5rem;">
+            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
+                {{ site.data.mission.mission.lead }}
+            </div>
         </div>
-    </div>
+    </section>
 
-    <h3>3つの問い、1つの答え</h3>
-    <ul class="notion-list">
-        {% for item in site.data.mission.3_questions %}
-        <li class="notion-list-item"><strong>{{ item.q }}</strong>: {{ item.a }}</li>
-        {% endfor %}
-    </ul>
+    <!-- PURPOSE -->
+    <section style="margin-bottom: 4rem;">
+        <span class="notion-mission-label">{{ site.data.mission.purpose.title }}</span>
+        <h3 style="font-size: 1.875rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
+            {{ site.data.mission.purpose.main_copy }}
+        </h3>
+        <div class="notion-callout"
+            style="background-color: var(--notion-hover); padding: 1.5rem; margin-bottom: 1.5rem;">
+            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
+                {{ site.data.mission.purpose.lead }}
+            </div>
+        </div>
+    </section>
+
+    <!-- VISION -->
+    <section style="margin-bottom: 4rem;">
+        <span class="notion-mission-label">{{ site.data.mission.vision.title }}</span>
+        <h3 style="font-size: 1.875rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
+            {{ site.data.mission.vision.main_copy }}
+        </h3>
+        <div class="notion-callout"
+            style="background-color: var(--notion-hover); padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
+                {{ site.data.mission.vision.lead }}
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section>
+        <span class="notion-mission-label">{{ site.data.mission.values.title }}</span>
+        <div class="notion-checklist-container">
+            {% for section in site.data.mission.values.sections %}
+            <div class="notion-checklist-group">
+                <h4>{{ section.icon }} {{ section.category }}</h4>
+                <p style="font-size: 0.8rem; color: var(--notion-secondary-text); margin-bottom: 1rem;">
+                    {{ section.subtitle }}
+                </p>
+                {% for item in section.items %}
+                <div class="notion-checklist-item">{{ item }}</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </div>
