@@ -1,12 +1,16 @@
+---
+---
+@import "variables";
+
 :root {
-  --primary-orange: #F06A33;
-  --secondary-orange: #F49221;
-  --dark-bg: #222222;
-  --gray-bg: #2D2D2D;
-  --light-gray-bg: #333333;
-  --text-main: #FFFFFF;
-  --text-muted: #CCCCCC;
-  --accent-gradient: linear-gradient(135deg, #F06A33 0%, #F49221 100%);
+  --primary-orange: #{$primary-orange};
+  --secondary-orange: #{$secondary-orange};
+  --dark-bg: #{$dark-bg};
+  --gray-bg: #{$gray-bg};
+  --light-gray-bg: #{$light-gray-bg};
+  --text-main: #{$text-main};
+  --text-muted: #{$text-muted};
+  --accent-gradient: #{$accent-gradient};
 }
 
 * {

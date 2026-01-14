@@ -13,11 +13,15 @@
                 </div>
             </div>
             <div class="cto-message-headline">
+                <div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem; line-height: 1.4;">
+                    業界を変える。<br>技術への投資。<br>未来を創る。
+                </div>
                 不動産取引の未来を、共に創る<br>
             </div>
         </div>
         <div class="cto-message-body">
-            {{ member.candid_message | markdownify }}
+            {{ member.candid_message | replace: "業界全体をつなぐ", "<strong>業界全体をつなぐ</strong>" | replace: "技術的挑戦",
+            "<strong>技術的挑戦</strong>" | markdownify }}
         </div>
     </div>
     {% endfor %}
@@ -32,16 +36,4 @@
                 target="_blank">募集要項一覧・エントリーはこちら</a>
         </div>
     </div>
-
-    <details class="notion-toggle" style="margin-top: 2em;">
-        <summary>選考フローを確認する</summary>
-        <div class="notion-toggle-content">
-            <ol class="notion-list" style="margin-left: 0;">
-                <li class="notion-list-item">カジュアル面談</li>
-                <li class="notion-list-item">書類選考</li>
-                <li class="notion-list-item">面接（2回）</li>
-                <li class="notion-list-item">オファー</li>
-            </ol>
-        </div>
-    </details>
 </div>

@@ -1,0 +1,32 @@
+title: "Business Phase"
+headline: "圧倒的シェアを武器に、第2創業期へ"
+
+stats:
+  - label: "入居申込件数"
+    value: "106万件"
+    description: "全国賃貸⼊居申込の約40％で利⽤"
+    note: "※全国賃貸住宅新聞発行「賃貸仲介・入居者動向 データブック 2025」の2024年賃貸仲介件数（推計）177万件より、ITANDIの本人申込から契約までのキャンセル率33％を基に⼊居申込数を264万件と算出し、ITANDIの年間電⼦⼊居申込数106万件から割合を推計"
+  - label: "ITANDI事業全体 導⼊企業数"
+    value: "5,211社"
+    description: "　"
+    note: "FY24.10 1Qより、「ITANDI管理クラウド」「内装⼯事くん」をはじめとするITANDI BB＋内の全てのSaaSプロダクト及びHousmart社の「PropoCloud」及びRENSOY XのSaaSプロダクトを加えて算出。"
+
+main_copy: "信頼とトラフィック"
+body_copy: |
+  すでに全国の賃貸契約の約40%を支えるプラットフォームへと成長しました。昨対+33%のトラフィック増と、膨大な実データが私たちの武器です。
+
+future_title: "SaaSからインフラへ"
+future_copy: |
+  私たちは今、単なる「業務効率化ツール」から、業界全体をつなぐ「BtoBプラットフォーム」へと進化する**最大の変革期**にいます。安定した基盤の上で、新規事業やリアーキテクチャなどの「技術的挑戦」に挑めるのが今のフェーズです。
+
+roadmap:
+  - step: "SaaS"
+    description: "業務効率化ツール"
+    status: "past"
+  - step: "Platform"
+    description: "業界をつなぐ基盤"
+    status: "current"
+    you_are_here: true
+  - step: "Infra"
+    description: "社会インフラ"
+    status: "future"

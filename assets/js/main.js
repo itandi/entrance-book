@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.status === 'ok') {
                     const posts = data.items.slice(0, 3);
                     blogContainer.innerHTML = posts.map(post => `
-                        <a href="${post.link}" target="_blank" style="text-decoration: none;">
-                            <div class="notion-card" style="height: 100%; display: flex; flex-direction: column;">
-                                <div style="font-size: 0.75rem; color: var(--notion-secondary-text); margin-bottom: 8px;">
+                        <a href="${post.link}" target="_blank" class="blog-post-link">
+                            <div class="notion-card blog-post-card">
+                                <div class="blog-post-date">
                                     ${post.pubDate.split(' ')[0].replace(/-/g, '.')}
                                 </div>
-                                <div class="notion-card-title" style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 0;">
+                                <div class="notion-card-title blog-post-title">
                                     ${post.title}
                                 </div>
                             </div>

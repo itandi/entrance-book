@@ -1,0 +1,13 @@
+steps:
+  - title: カジュアル面談
+    description: オンライン / 服装自由
+    icon: ☕
+  - title: 書類選考
+    description: レジュメ・PF提出
+    icon: 📄
+  - title: 面接（2回）
+    description: メンバー・CTO・役員
+    icon: 🗣️
+  - title: オファー面談
+    description: その後、入社！
+    icon: 🤝

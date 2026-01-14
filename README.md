@@ -15,26 +15,46 @@ docker-compose up
 docker-compose down
 ```
 
-起動後、 [http://localhost:4000](http://localhost:4000) にアクセスしてください。`public` 内のファイルを編集すると自動的にリロードされます。
+起動後、 [http://localhost:4000](http://localhost:4000) にアクセスしてください。ファイルを編集すると自動的にリロードされます。
+
+## 🛠 メンテナンスガイド
+
 
 ## 📂 ディレクトリ構造
 
-プロジェクトは `public` ディレクトリを Jekyll のルートとして構成しています。
+
+
+プロジェクトのルートディレクトリに Jekyll のリソースが配置されています。
+
+
 
 ```text
+
 .
+
 ├── docker-compose.yml       # ローカル開発環境の定義
-├── public/                  # Jekyll プロジェクトルート
-│   ├── _config.yml          # Jekyll 設定（コレクション定義など）
-│   ├── _data/               # コンテンツデータ（YAML形式）
-│   ├── _includes/           # 再利用可能なコンポーネント
-│   ├── _layouts/            # ベースレイアウト
-│   ├── _sections/           # ページの各セクション（Markdown）
-│   ├── assets/              # 静的ファイル（CSS, JS, 画像）
-│   ├── index.md             # メインエントリ（セクションを自動結合）
-│   └── Gemfile              # Ruby 依存関係
+
+├── _config.yml              # Jekyll 設定（コレクション定義など）
+
+├── _data/                   # コンテンツデータ（YAML形式）
+
+├── _includes/               # 再利用可能なコンポーネント
+
+├── _layouts/                # ベースレイアウト
+
+├── _sections/               # ページの各セクション（Markdown）
+
+├── assets/                  # 静的ファイル（CSS, JS, 画像）
+
+├── index.md                 # メインエントリ（セクションを自動結合）
+
+├── Gemfile                  # Ruby 依存関係
+
 └── docs/                    # 設計資料・要件定義
+
 ```
+
+
 
 ## 🛠 メンテナンスガイド
 
@@ -59,8 +79,7 @@ HTMLを編集することなく、YAMLを書き換えるだけでサイトの内
 1. このリポジトリを GitHub にプッシュします。
 2. リポジトリの **Settings > Pages** を開きます。
 3. **Build and deployment > Source** で `Deploy from a branch` を選択します。
-4. **Branch** で `main`（または公開用ブランチ）を選択し、ディレクトリを `/public` に設定して保存します。
-   - ※ `/public` をルートとして公開するように設定してください。
+4. **Branch** で `main`（または公開用ブランチ）を選択し、ディレクトリを `/(root)` に設定して保存します。
 
 ---
 © 2026 ITANDI, Inc.

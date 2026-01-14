@@ -1,12 +1,16 @@
+---
+---
+@import "variables";
+
 :root {
-    --notion-bg: #ffffff;
-    --notion-text: #37352f;
-    --notion-secondary-text: rgba(55, 53, 47, 0.65);
-    --notion-border: rgba(55, 53, 47, 0.09);
-    --notion-hover: rgba(55, 53, 47, 0.04);
-    --notion-red: #eb5757;
-    --notion-blue: #2f80ed;
-    --notion-gray-bg: #f1f1f0;
+    --notion-bg: #{$notion-bg};
+    --notion-text: #{$notion-text};
+    --notion-secondary-text: #{$notion-secondary-text};
+    --notion-border: #{$notion-border};
+    --notion-hover: #{$notion-hover};
+    --notion-red: #{$notion-red};
+    --notion-blue: #{$notion-blue};
+    --notion-gray-bg: #{$notion-gray-bg};
 }
 
 * {
@@ -208,6 +212,39 @@ a:hover {
 .notion-card-title {
     font-weight: 700;
     font-size: 1.125rem;
+    margin-bottom: 4px;
+}
+
+/* Added for JS-generated content and Metrics */
+.blog-post-link {
+    text-decoration: none;
+}
+
+.blog-post-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-date {
+    font-size: 0.75rem;
+    color: var(--notion-secondary-text);
+    margin-bottom: 8px;
+}
+
+.blog-post-title {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.metric-number {
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+}
+
+.metric-label {
+    font-weight: 600;
     margin-bottom: 4px;
 }
 
