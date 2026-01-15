@@ -122,6 +122,11 @@ p {
     margin: 0.5em 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .notion-callout {
     display: flex;
     padding: 16px;
@@ -136,12 +141,12 @@ p {
 }
 
 .notion-list {
-    margin: 1em 0;
-    padding-left: 24px;
+    margin: 1.5em 0;
+    padding-left: 28px;
 }
 
 .notion-list-item {
-    margin: 0.25em 0;
+    margin: 0.5em 0;
 }
 
 a {
@@ -162,7 +167,47 @@ a:hover {
 .notion-divider {
     border: none;
     border-top: 1px solid var(--notion-border);
-    margin: 32px 0;
+    margin: 48px 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--notion-border);
+    margin: 48px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+}
+
+th,
+td {
+    border: 1px solid var(--notion-border);
+    padding: 10px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--notion-gray-bg);
+    font-weight: 600;
+    color: var(--notion-secondary-text);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+ul,
+ol {
+    margin: 1.5em 0;
+    padding-left: 28px;
+}
+
+li {
+    margin: 0.5em 0;
 }
 
 /* Notion-specific Component Styles */
@@ -701,7 +746,7 @@ details.notion-toggle[open] summary::before {
         width: 20px;
         height: 20px;
     }
-    
+
     .tech-name {
         font-size: 0.8rem;
     }

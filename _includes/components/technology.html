@@ -57,17 +57,19 @@
         <div style="margin-top: 1.5em; font-size: 0.875rem;">
             <a href="https://tech.itandi.co.jp/" target="_blank">技術ブログをもっと見る →</a>
         </div>
+        <div style="margin-top: 1.5em; font-size: 0.875rem;">
+            <a href="{{ '/teams/frontend/' | relative_url }}">👉 フロントエンドチームの詳細はこちら</a>
+        </div>
     </div>
-</div>
 
-<div class="notion-section">
-    <h3>開発文化</h3>
-    <p>イタンジのエンジニアリング組織を支える文化と実践をご紹介します。</p>
+    <div class="notion-section">
+        <h3>開発文化</h3>
+        <p>イタンジのエンジニアリング組織を支える文化と実践をご紹介します。</p>
 
-    <div class="tag-cloud-container">
-        {% for tag in site.data.dev_culture.tags %}
-        <span class="tag-cloud-item tag-{{ tag.size }}">{{ tag.name }}</span>
-        {% endfor %}
+        <div class="tag-cloud-container">
+            {% for tag in site.data.dev_culture.tags %}
+            <span class="tag-cloud-item tag-{{ tag.size }}">{{ tag.name }}</span>
+            {% endfor %}
+        </div>
+        <p>※詳しくはカジュアル面談で説明いたします。</p>
     </div>
-    <p>※詳しくはカジュアル面談で説明いたします。</p>
-</div>
