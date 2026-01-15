@@ -1,9 +1,37 @@
 tech_layers:
   - layer: "Application & Frontend"
-    items: ["Ruby on Rails", "React", "TypeScript", "MySQL"]
-  - layer: "ETL & Data Processing"
-    items: ["digdag", "embulk", "Akka", "OpenSearch", "AWS DMS"]
+    items:
+      - name: "Ruby"
+        icon: "https://cdn.simpleicons.org/ruby/CC0000"
+      - name: "React"
+        icon: "https://cdn.simpleicons.org/react/61DAFB"
+      - name: "TypeScript"
+        icon: "https://cdn.simpleicons.org/typescript/3178C6"
+      - name: "MySQL"
+        icon: "https://cdn.simpleicons.org/mysql/4479A1"
   - layer: "Infrastructure & Platform"
-    items: ["AWS", "Terraform"]
+    items:
+      - name: "AWS"
+        icon: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000"
+      - name: "Google Cloud"
+        icon: "https://img.icons8.com/?size=100&id=WHRLQdbEXQ16&format=png&color=000000"
+      - name: "Terraform"
+        icon: "https://cdn.simpleicons.org/terraform/7B42BC"
   - layer: "Data Analysis Foundation"
-    items: ["Apache Airflow", "Google BigQuery"]
+    items:
+      - name: "Apache Airflow"
+        icon: "https://cdn.simpleicons.org/apacheairflow/017CEE"
+      - name: "Google BigQuery"
+        icon: "https://cdn.simpleicons.org/googlebigquery/669DF6"
+  - layer: "Development Tool"
+    items:
+      - name: "GitHub"
+        icon: "https://cdn.simpleicons.org/github/181717"
+      - name: "GitHub Copilot"
+        icon: "https://cdn.simpleicons.org/githubcopilot/000000"
+      - name: "GitHub Actions"
+        icon: "https://cdn.simpleicons.org/githubactions/2088FF"
+      - name: "CircleCI"
+        icon: "https://cdn.simpleicons.org/circleci/343434"
+      - name: "Figma"
+        icon: "https://cdn.simpleicons.org/figma/F24E1E"

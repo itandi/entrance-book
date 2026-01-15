@@ -661,3 +661,48 @@ details.notion-toggle[open] summary::before {
         font-size: 1.25rem;
     }
 }
+
+/* Technology Stack Icons */
+.tech-stack-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.tech-item:hover {
+    background-color: var(--notion-hover);
+}
+
+.tech-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tech-name {
+    font-size: 0.875rem;
+    color: var(--notion-text);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .tech-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .tech-name {
+        font-size: 0.8rem;
+    }
+}

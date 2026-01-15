@@ -12,9 +12,12 @@
         {% for layer in site.data.tech_stack.tech_layers %}
         <div class="notion-card">
             <div class="notion-card-title" style="font-size: 1rem;">{{ layer.layer }}</div>
-            <div class="notion-card-description">
+            <div class="tech-stack-items">
                 {% for item in layer.items %}
-                {{ item }}{% unless forloop.last %}, {% endunless %}
+                <div class="tech-item">
+                    <img src="{{ item.icon }}" alt="{{ item.name }}" class="tech-icon">
+                    <span class="tech-name">{{ item.name }}</span>
+                </div>
                 {% endfor %}
             </div>
         </div>

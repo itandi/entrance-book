@@ -1,6 +1,5 @@
 ---
 layout: lp
-title: イタンジ株式会社 エンジニア採用情報
 ---
 
 {% include components/hero.html %}
