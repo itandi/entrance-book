@@ -1,5 +1,5 @@
 ---
-layout: lp
+layout: default
 title: フロントエンドチーム
 ---
 

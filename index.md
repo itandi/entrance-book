@@ -1,5 +1,5 @@
 ---
-layout: lp
+layout: default
 ---
 
 {% include components/hero.html %}
