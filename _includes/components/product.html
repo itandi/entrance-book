@@ -49,60 +49,25 @@
             </div>
 
             <!-- Data Flywheel Visualization -->
-            <div class="flywheel-container"
-                style="background: var(--notion-gray-bg); padding: 2em; border-radius: 12px; text-align: center;">
-                <div style="font-weight: 700; color: var(--notion-blue); margin-bottom: 2em; font-size: 1.1rem;">
-                    DATA FLYWHEEL</div>
+            <div class="flywheel-container">
+                <div class="flywheel-title">{{ site.data.product_flywheel.flywheel.title }}</div>
 
-                <div style="position: relative; display: inline-block;">
+                <div class="flywheel-viz">
                     <!-- Circular Flow -->
-                    <div
-                        style="width: 240px; height: 240px; border: 3px dashed var(--notion-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: spin 20s linear infinite;">
-                    </div>
+                    <div class="flywheel-circle"></div>
 
                     <!-- Nodes -->
-                    <div
-                        style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
-                        電子申し込み<br><span style="color: var(--notion-blue);">シェアNo.1</span>
+                    {% for node in site.data.product_flywheel.flywheel.nodes %}
+                    <div class="flywheel-node node-{{ node.position }}">
+                        {{ node.label }}<br><span>{{ node.highlight }}</span>
                     </div>
-                    <div
-                        style="position: absolute; top: 120px; right: -70px; transform: translateY(-50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
-                        在庫情報の<br><span style="color: var(--notion-blue);">リアルタイム反映</span>
-                    </div>
-                    <div
-                        style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
-                        信頼性の高い<br><span style="color: var(--notion-blue);">インフラ</span>
-                    </div>
-                    <div
-                        style="position: absolute; top: 120px; left: -70px; transform: translateY(-50%); background: #fff; padding: 10px 15px; border: 2px solid var(--notion-blue); border-radius: 8px; font-size: 0.75rem; font-weight: 700; width: 140px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;">
-                        さらなる<br><span style="color: var(--notion-blue);">SaaS導入拡大</span>
-                    </div>
+                    {% endfor %}
                 </div>
 
-                <div
-                    style="margin-top: 3em; font-size: 0.85rem; font-weight: 600; color: var(--notion-secondary-text);">
-                    SaaS利用が増えるほどデータが集まり、<br>プラットフォームが強くなる循環構造
+                <div class="flywheel-footer">
+                    {{ site.data.product_flywheel.flywheel.footer }}
                 </div>
             </div>
         </div>
     </div>
-
-    <style>
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .flywheel-container {
-                margin: 4em 0;
-                transform: scale(0.8);
-            }
-        }
-    </style>
 </div>

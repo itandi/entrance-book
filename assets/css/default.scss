@@ -2,6 +2,7 @@
 ---
 @import "variables";
 
+
 :root {
     --notion-bg: #{$notion-bg};
     --notion-text: #{$notion-text};
@@ -208,6 +209,14 @@ ol {
 
 li {
     margin: 0.5em 0;
+}
+
+.notion-footer {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid var(--notion-border);
+    color: var(--notion-secondary-text);
+    font-size: 0.875rem;
 }
 
 /* Notion-specific Component Styles */
@@ -707,6 +716,178 @@ details.notion-toggle[open] summary::before {
     }
 }
 
+/* Management Evolution Diagram */
+.management-evolution {
+    margin-bottom: 3em;
+    background: var(--notion-gray-bg);
+    padding: 2em;
+    border-radius: 8px;
+
+    .mgmt-header {
+        font-weight: 600;
+        margin-bottom: 1em;
+        color: var(--notion-secondary-text);
+    }
+
+    .mgmt-header.after {
+        color: var(--notion-blue);
+    }
+
+    .mgmt-icon-before {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        .mgmt-limit-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--notion-red);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+    }
+
+    .mgmt-icon-after {
+        display: flex;
+        justify-content: center;
+        gap: -15px;
+
+        .mgmt-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-right: -20px;
+
+            &.people {
+                background: rgba(54, 162, 235, 0.1);
+                border: 2px solid var(--notion-blue);
+                z-index: 3;
+            }
+
+            &.delivery {
+                background: rgba(255, 159, 64, 0.1);
+                border: 2px solid #ff9f40;
+                z-index: 2;
+            }
+
+            &.systems {
+                background: rgba(255, 99, 132, 0.1);
+                border: 2px solid var(--notion-red);
+                z-index: 1;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .mgmt-caption {
+        margin-top: 1em;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .mgmt-caption.bold {
+        font-weight: 600;
+    }
+}
+
+/* Data Flywheel Visualization */
+.flywheel-container {
+    background: var(--notion-gray-bg);
+    padding: 2em;
+    border-radius: 12px;
+    text-align: center;
+
+    .flywheel-title {
+        font-weight: 700;
+        color: var(--notion-blue);
+        margin-bottom: 2em;
+        font-size: 1.1rem;
+    }
+
+    .flywheel-viz {
+        position: relative;
+        display: inline-block;
+    }
+
+    .flywheel-circle {
+        width: 240px;
+        height: 240px;
+        border: 3px dashed var(--notion-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: spin 20s linear infinite;
+    }
+
+    .flywheel-node {
+        position: absolute;
+        background: #fff;
+        padding: 10px 15px;
+        border: 2px solid var(--notion-blue);
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 140px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translate(-50%, -50%);
+
+        span {
+            color: var(--notion-blue);
+        }
+
+        &.node-top {
+            top: 0;
+            left: 50%;
+        }
+
+        &.node-right {
+            top: 50%;
+            right: -70px;
+            transform: translateY(-50%);
+        }
+
+        &.node-bottom {
+            bottom: -35px;
+            /* Adjusting for transform */
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        &.node-left {
+            top: 50%;
+            left: -70px;
+            transform: translateY(-50%);
+        }
+    }
+
+    .flywheel-footer {
+        margin-top: 3em;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--notion-secondary-text);
+    }
+}
+
 /* Technology Stack Icons */
 .tech-stack-items {
     display: flex;
@@ -741,7 +922,22 @@ details.notion-toggle[open] summary::before {
     font-weight: 500;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 768px) {
+    .flywheel-container {
+        margin: 4em 0;
+        transform: scale(0.8);
+    }
+
     .tech-icon {
         width: 20px;
         height: 20px;

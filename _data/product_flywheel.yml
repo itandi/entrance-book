@@ -1,0 +1,16 @@
+flywheel:
+  title: "DATA FLYWHEEL"
+  nodes:
+    - label: "電子申し込み"
+      highlight: "シェアNo.1"
+      position: "top"
+    - label: "在庫情報の"
+      highlight: "リアルタイム反映"
+      position: "right"
+    - label: "信頼性の高い"
+      highlight: "インフラ"
+      position: "bottom"
+    - label: "さらなる"
+      highlight: "SaaS導入拡大"
+      position: "left"
+  footer: "SaaS利用が増えるほどデータが集まり、<br>プラットフォームが強くなる循環構造"

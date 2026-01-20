@@ -1,0 +1,46 @@
+metrics:
+  - title: "エンジニア組織規模"
+    value: "約70名"
+    footer: "業務委託等含む"
+  - title: "体制"
+    value: "CTO Office ＋ 8ユニット"
+    footer: "フラットな構成による迅速な意思決定"
+
+phase:
+  icon: "🚀"
+  title: "現在のフェーズ: 100名への変革期"
+  description: "これまでの「プレイングマネージャーが全てを見る」体制から、100名規模を見据えた「分業・専門化」への移行期にあります。仕組み自体を一緒に作り上げるリーダー層・スペシャリスト層を求めています。"
+
+management_structure:
+  headline: "Management Structure: 70名の壁を越える分業型組織"
+  description: "「1人の万能なマネージャー」に依存しない。得意領域で組織を牽引する3つの役割への分権化を進めています。"
+  roles:
+    - title: "People Management"
+      subtitle: "(組織・人)"
+      color: "var(--notion-blue)"
+      commitment: "「人の成長にコミットする」"
+      items:
+        - "1on1・キャリア支援"
+        - "評価・フィードバック"
+        - "採用・カルチャー醸成"
+    - title: "Delivery Management"
+      subtitle: "(進行・デリバリー)"
+      color: "#ff9f40"
+      commitment: "「コトの推進にコミットする」"
+      items:
+        - "スクラム運営・進行管理"
+        - "リリース計画・ロードマップ"
+        - "ステークホルダー調整"
+    - title: "Systems Management"
+      subtitle: "(技術・品質)"
+      color: "var(--notion-red)"
+      commitment: "「システムの進化にコミットする」"
+      items:
+        - "品質保証・アーキテクチャ設計"
+        - "技術적負債の解消・標準化"
+        - "開発プロセス改善・自動化"
+
+specialist_note:
+  icon: "💡"
+  title: "技術のスペシャリストが、コードから離れずに貢献できる道を。"
+  text: "組織が50名を超え、100名規模を目指すフェーズにおいて、従来のプレイングマネージャーモデルは限界を迎えます。イタンジでは、「人を見るのは苦手だが、開発品質や技術水準の引き上げには責任を持ちたい」というエンジニアがリーダーシップを発揮できる環境を、『Systems Management』として定義しました。"
