@@ -8,7 +8,5 @@ google_fonts:
   - family: Noto Sans JP
     weights: "400;700"
 
-collections:
-  sections:
-    output: false
-    sort_by: name
+
+

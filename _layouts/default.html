@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
 </head>
 
@@ -17,14 +18,6 @@
     {% endif %}
 
     <div class="page-container">
-        <header class="page-header" {% if page.cover %}style="margin-top: 40px;" {% else %}style="margin-top: 80px;" {%
-            endif %}>
-            {% if page.icon %}
-            <span class="page-icon {% if page.cover %}has-cover{% endif %}">{{ page.icon }}</span>
-            {% endif %}
-            <h1 class="page-title">{{ page.title }}</h1>
-        </header>
-
         <main>
             {{ content }}
         </main>
