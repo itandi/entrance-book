@@ -3,65 +3,12 @@
     <h2>MVVP</h2>
     <br>
 
-    <!-- MISSION -->
-    <section style="margin-bottom: 4rem;">
-        <span class="notion-mission-label">{{ site.data.mission.mission.title }}</span>
-        <h2 style="font-size: 2.25rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
-            {{ site.data.mission.mission.main_copy }}
-        </h2>
-        <div class="notion-callout" style="background-color: var(--notion-hover); padding: 1.5rem;">
-            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
-                {{ site.data.mission.mission.lead }}
-            </div>
+    <div class="product-slide-container">
+        <div class="responsive-embed">
+            <iframe
+                src="https://docs.google.com/presentation/d/e/2PACX-1vS8ykP6lsu7ZqZ2rtfke-9DDa9i5VLcy1LKPWEYY3g1RUhqksKFoKokTASG_33DadAItEbCh2i6btwL/pubembed?start=false&loop=false&delayms=3000&slide=id.g369b2b81011_0_10"
+                frameborder="0" width="100%" height="500px" allowfullscreen="true" mozallowfullscreen="true"
+                webkitallowfullscreen="true"></iframe>
         </div>
-    </section>
-
-    <!-- PURPOSE -->
-    <section style="margin-bottom: 4rem;">
-        <span class="notion-mission-label">{{ site.data.mission.purpose.title }}</span>
-        <h3 style="font-size: 1.875rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
-            {{ site.data.mission.purpose.main_copy }}
-        </h3>
-        <div class="notion-callout"
-            style="background-color: var(--notion-hover); padding: 1.5rem; margin-bottom: 1.5rem;">
-            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
-                {{ site.data.mission.purpose.lead }}
-            </div>
-        </div>
-    </section>
-
-    <!-- VISION -->
-    <section style="margin-bottom: 4rem;">
-        <span class="notion-mission-label">{{ site.data.mission.vision.title }}</span>
-        <h3 style="font-size: 1.875rem; border: none; margin-top: 0; margin-bottom: 1.5rem;">
-            {{ site.data.mission.vision.main_copy }}
-        </h3>
-        <div class="notion-callout"
-            style="background-color: var(--notion-hover); padding: 1.5rem; margin-bottom: 2rem;">
-            <div class="notion-callout-content" style="font-size: 1.05rem; line-height: 1.7;">
-                {{ site.data.mission.vision.lead }}
-            </div>
-        </div>
-    </section>
-
-    <!-- VALUES -->
-    <section>
-        <span class="notion-mission-label">{{ site.data.mission.values.title }}</span>
-        <div class="notion-checklist-container">
-            {% for section in site.data.mission.values.sections %}
-            <div class="notion-checklist-group">
-                <h4>{{ section.icon }} {{ section.category }}</h4>
-                <p style="font-size: 0.8rem; color: var(--notion-secondary-text); margin-bottom: 1rem;">
-                    {{ section.subtitle }}
-                </p>
-                {% for item in section.items %}
-                <div class="notion-checklist-item">{{ item }}</div>
-                {% endfor %}
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    {% include components/cta_area.html %}
+    </div>
 </div>
