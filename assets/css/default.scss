@@ -405,6 +405,111 @@ li {
     border: 1px solid var(--notion-border);
 }
 
+.notion-section-description {
+    color: var(--notion-secondary-text);
+    margin-bottom: 2em;
+}
+
+.notion-card-subtitle {
+    font-size: 0.75rem;
+    color: var(--notion-secondary-text);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.notion-card-list {
+    margin: 8px 0;
+    font-size: 0.875rem;
+}
+
+.notion-card-link-wrapper {
+    margin-top: 16px;
+}
+
+.notion-card-link {
+    font-size: 0.875rem;
+    color: var(--notion-secondary-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.notion-spacer-4em {
+    margin-top: 4em;
+}
+
+.notion-grid-centered {
+    align-items: center;
+    gap: 4em;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.notion-body-text-large {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 1.5em 0;
+
+    &.secondary {
+        color: var(--notion-secondary-text);
+    }
+}
+
+// Organization Component Classes
+.notion-metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.notion-metric-footer {
+    font-size: 0.875rem;
+    color: var(--notion-secondary-text);
+}
+
+.notion-callout-text {
+    margin-top: 8px;
+}
+
+.notion-card-subtitle-small {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--notion-secondary-text);
+}
+
+.notion-card-commitment {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.notion-list-no-margin {
+    font-size: 0.875rem;
+    margin-left: 0;
+}
+
+.notion-callout-pink {
+    background-color: rgba(255, 99, 132, 0.05);
+    border: 1px solid rgba(255, 99, 132, 0.2);
+}
+
+.notion-callout-content-sm {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+// Global Utilities
+.mb-3em {
+    margin-bottom: 3em !important;
+}
+
+.notion-text-center {
+    text-align: center;
+}
+
 .cto-message-header {
     display: flex;
     gap: 3rem;
@@ -973,7 +1078,8 @@ details.notion-toggle[open] summary::before {
     .tech-name {
         font-size: 0.8rem;
     }
-    .notion-hero{
+
+    .notion-hero {
         margin-top: 1rem;
         margin-bottom: 1rem;
     }

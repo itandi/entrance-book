@@ -1,31 +1,29 @@
 <div class="notion-section">
     <hr class="notion-divider">
     <h2>Product</h2>
-    <p style="color: var(--notion-secondary-text); margin-bottom: 2em;">
+    <p class="notion-section-description">
         イタンジは、不動産取引の全工程をカバーするプロダクトラインナップを展開することで、<strong>不動産取引をなめらかにしています</strong>。<br>単一のSaaSを提供するのではなく、管理・仲介・売買、そして業者間流通のすべてを繋ぐことで、業界全体の体験を再定義しています。
     </p>
 
     <div class="notion-grid-2">
         {% for item in site.data.products.product_categories %}
         <div class="notion-card">
-            <div
-                style="font-size: 0.75rem; color: var(--notion-secondary-text); text-transform: uppercase; font-weight: 600;">
+            <div class="notion-card-subtitle">
                 {{ item.service_name }}</div>
             <div class="notion-card-title">{{ item.title }}</div>
             {% if item.scope %}
-            <ul class="notion-list" style="margin: 8px 0; font-size: 0.875rem;">
+            <ul class="notion-list notion-card-list">
                 {% for li in item.scope %}
                 <li class="notion-list-item">{{ li }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
             {% if item.description %}
-            <p style="font-size: 0.875rem; margin-top: 8px;">{{ item.description }}</p>
+            <p class="notion-card-description mt-0" style="margin-top: 8px;">{{ item.description }}</p>
             {% endif %}
             {% if item.url %}
-            <div style="margin-top: 16px;">
-                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"
-                    style="font-size: 0.875rem; color: var(--notion-secondary-text); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            <div class="notion-card-link-wrapper">
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="notion-card-link">
                     サービスサイト <span>↗</span>
                 </a>
             </div>
@@ -34,15 +32,15 @@
         {% endfor %}
     </div>
 
-    <div style="margin-top: 4em;">
+    <div class="notion-spacer-4em">
         <hr class="notion-divider">
-        <div class="notion-grid-2" style="align-items: center; gap: 4em;">
+        <div class="notion-grid-2 notion-grid-centered">
             <div>
-                <h2 style="margin-top: 0;">シェアNo.1が生み出す、<br>「日本で一番鮮度の高い」不動産DB</h2>
-                <p style="font-size: 0.95rem; line-height: 1.6; margin: 1.5em 0;">
+                <h2 class="mt-0">シェアNo.1が生み出す、<br>「日本で一番鮮度の高い」不動産DB</h2>
+                <p class="notion-body-text-large">
                     なぜ「電子申し込み」のシェアNo.1が重要なのか。それは<strong>「物件が埋まった瞬間」のデータをイタンジが最も早く知ることができる</strong>からです。
                 </p>
-                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--notion-secondary-text);">
+                <p class="notion-body-text-large secondary">
                     不動産業界の最大の課題は「情報の鮮度」です。アナログな取引ではタイムラグが発生し、「ネット上では空室なのに、電話すると埋まっている」という体験がなくなりません。
                     私たちは年間100万件を超えるトランザクションを処理することで、日本中の物件情報の「リアルタイム化」を実現しています。
                 </p>

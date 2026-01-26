@@ -2,35 +2,35 @@
     <hr class="notion-divider">
     <h2>Organization & Team</h2>
 
-    <div class="notion-grid-2" style="margin-bottom: 3em;">
+    <div class="notion-grid-2 mb-3em">
         {% for metric in site.data.organization.metrics %}
         <div class="notion-card">
             <div class="notion-card-title">{{ metric.title }}</div>
-            <div style="font-size: 2rem; font-weight: 700; margin: 8px 0;">{{ metric.value }}</div>
-            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">{{ metric.footer }}</p>
+            <div class="notion-metric-value">{{ metric.value }}</div>
+            <p class="notion-metric-footer">{{ metric.footer }}</p>
         </div>
         {% endfor %}
     </div>
 
-    <div class="notion-callout" style="margin-bottom: 3em;">
+    <div class="notion-callout mb-3em">
         <div class="notion-callout-icon">{{ site.data.organization.phase.icon }}</div>
         <div class="notion-callout-content">
             <strong>{{ site.data.organization.phase.title }}</strong>
-            <p style="margin-top: 8px;">
+            <p class="notion-callout-text">
                 {{ site.data.organization.phase.description }}
             </p>
         </div>
     </div>
 
     <h3>{{ site.data.organization.management_structure.headline }}</h3>
-    <p style="color: var(--notion-secondary-text); margin-bottom: 2em;">
+    <p class="notion-section-description">
         {{ site.data.organization.management_structure.description }}
     </p>
 
     <!-- Management Evolution Diagram -->
     <div class="management-evolution">
-        <div class="notion-grid-2" style="align-items: center; gap: 4em;">
-            <div style="text-align: center;">
+        <div class="notion-grid-2 notion-grid-centered">
+            <div class="notion-text-center">
                 <div class="mgmt-header">Before: 従来のマネージャー</div>
                 <div class="mgmt-icon-before">
                     👤
@@ -38,7 +38,7 @@
                 </div>
                 <div class="mgmt-caption">People + Delivery + Tech<br>全てを1人で抱える重荷</div>
             </div>
-            <div style="text-align: center; position: relative;">
+            <div class="notion-text-center" style="position: relative;">
                 <div class="mgmt-header after">After: 3つの専門機能への分権</div>
                 <div class="mgmt-icon-after">
                     <div class="mgmt-circle people" title="People">👥</div>
@@ -53,13 +53,12 @@
     <div class="notion-grid-3">
         {% for role in site.data.organization.management_structure.roles %}
         <div class="notion-card" style="border-top: 4px solid {{ role.color }};">
-            <div class="notion-card-title">{{ role.title }}<br><span
-                    style="font-size: 0.8rem; font-weight: 400; color: var(--notion-secondary-text);">{{ role.subtitle
+            <div class="notion-card-title">{{ role.title }}<br><span class="notion-card-subtitle-small">{{ role.subtitle
                     }}</span>
             </div>
-            <p style="font-size: 0.75rem; color: {{ role.color }}; font-weight: 600; margin-bottom: 8px;">
+            <p class="notion-card-commitment" style="color: {{ role.color }};">
                 {{ role.commitment }}</p>
-            <ul class="notion-list" style="font-size: 0.875rem; margin-left: 0;">
+            <ul class="notion-list notion-list-no-margin">
                 {% for item in role.items %}
                 <li class="notion-list-item">{{ item }}</li>
                 {% endfor %}
@@ -68,10 +67,9 @@
         {% endfor %}
     </div>
 
-    <div class="notion-callout"
-        style="margin-top: 2em; background-color: rgba(255, 99, 132, 0.05); border: 1px solid rgba(255, 99, 132, 0.2);">
+    <div class="notion-callout mt-0 notion-callout-pink">
         <div class="notion-callout-icon">{{ site.data.organization.specialist_note.icon }}</div>
-        <div class="notion-callout-content" style="font-size: 0.9rem; line-height: 1.6;">
+        <div class="notion-callout-content notion-callout-content-sm">
             <strong>{{ site.data.organization.specialist_note.title }}</strong><br>
             {{ site.data.organization.specialist_note.text }}
         </div>
