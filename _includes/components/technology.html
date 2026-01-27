@@ -11,7 +11,7 @@
     <div class="notion-grid-2">
         {% for layer in site.data.tech_stack.tech_layers %}
         <div class="notion-card">
-            <div class="notion-card-title" style="font-size: 1rem;">{{ layer.layer }}</div>
+            <div class="notion-card-title tech-layer-title">{{ layer.layer }}</div>
             <div class="tech-stack-items">
                 {% for item in layer.items %}
                 <div class="tech-item">
@@ -24,41 +24,38 @@
         {% endfor %}
     </div>
 
-    <div style="margin-top: 4em;">
+    <div class="mt-4em">
         <h3>2026年のテーマ: 「品質」が加速のエンジンになる</h3>
-        <p style="color: var(--notion-secondary-text); margin-bottom: 1.5em;">
+        <p class="notion-card-description">
             高い品質を維持することが、持続可能な開発速度と生産性を生み出し、最終的に顧客へ提供する価値を最大化すると考えています。</p>
 
         <div class="notion-grid-2">
-            <div class="notion-card" style="background-color: var(--notion-gray-bg); border: none;">
-                <div
-                    style="font-size: 0.75rem; color: var(--notion-secondary-text); font-weight: 600; text-transform: uppercase;">
-                    Phase 1</div>
+            <div class="notion-card tech-policy-card">
+                <div class="tech-policy-label">Phase 1</div>
                 <div class="notion-card-title">ガイドライン</div>
-                <p style="font-size: 0.875rem;">まず「推奨されるガイドライン」として導入し、組織全体の品質ベースラインを引き上げます。</p>
+                <p class="tech-policy-text">まず「推奨されるガイドライン」として導入し、組織全体の品質ベースラインを引き上げます。</p>
             </div>
-            <div class="notion-card" style="background-color: var(--notion-gray-bg); border: none;">
-                <div
-                    style="font-size: 0.75rem; color: var(--notion-secondary-text); font-weight: 600; text-transform: uppercase;">
-                    Phase 2</div>
+            <div class="notion-card tech-policy-card">
+                <div class="tech-policy-label">Phase 2</div>
                 <div class="notion-card-title">規則 (Rules)</div>
-                <p style="font-size: 0.875rem;">遵守率が向上した後、「絶対遵守の規則」へ移行し、CI/CDで品質を技術的に強制します。</p>
+                <p class="tech-policy-text">遵守率が向上した後、「絶対遵守の規則」へ移行し、CI/CDで品質を技術的に強制します。</p>
             </div>
         </div>
     </div>
-    <div style="margin-top: 4em;">
+    <div class="mt-4em">
         <h3>ITANDI Tech Blog</h3>
-        <p style="font-size: 0.875rem; color: var(--notion-secondary-text); margin-bottom: 1.5em;">
+        <p class="tech-policy-text notion-secondary-text mb-3rem">
             最新の技術スタックや開発の裏側を発信しています。</p>
         <div id="blog-posts" class="notion-grid-3">
             <!-- Posts will be loaded here by main.js -->
-            <p style="font-size: 0.875rem; color: var(--notion-secondary-text);">Loading latest posts...</p>
+            <p class="tech-blog-loading">Loading latest posts...</p>
         </div>
-        <div style="margin-top: 1.5em; font-size: 0.875rem; display: flex; flex-direction: column; gap: 0.75em;">
+        <div class="tech-blog-list">
             <a href="https://tech.itandi.co.jp/" target="_blank">👉 ITANDI Tech Blog (技術ブログ) をもっと見る</a>
             <a href="https://shanaiho.itandi.co.jp/m/m7e4e938c8e73" target="_blank">👉 技術広報ブログ (エンジニア・組織紹介) はこちら</a>
         </div>
-        <div style="margin-top: 1.5em; font-size: 0.875rem;">
+        <div class="tech-blog-more">
             <a href="{{ '/teams/frontend/' | relative_url }}">👉 フロントエンドチームの詳細はこちら</a>
         </div>
     </div>
+</div>

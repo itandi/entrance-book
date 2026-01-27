@@ -1177,13 +1177,166 @@ details.notion-toggle[open] summary::before {
   margin-top: auto;
 }
 
-/* Mobile responsive for blog cards */
-@media (max-width: 768px) {
-  .blog-cards-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .blog-card-content {
-    padding: 20px;
-  }
+/* Business Phase Component */
+.bf-stats-wrapper {
+    margin-bottom: 3rem;
+}
+
+.bf-stats-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.bf-stat-card {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: 4px solid var(--notion-blue);
+}
+
+.bf-stat-label {
+    font-size: 0.9rem;
+    color: var(--notion-secondary-text);
+    font-weight: bold;
+}
+
+.bf-stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--notion-text);
+    line-height: 1.2;
+}
+
+.bf-stat-description {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.bf-stat-note {
+    font-size: 0.6rem;
+    color: var(--notion-gray);
+    margin-top: 0.5rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.bf-roadmap-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
+    position: relative;
+    padding: 60px 0 20px 0;
+}
+
+.bf-roadmap-line {
+    position: absolute;
+    top: 68px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.bf-roadmap-step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.bf-roadmap-badge {
+    position: absolute;
+    top: -45px;
+    background: var(--notion-red);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.bf-roadmap-badge-arrow {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--notion-red);
+}
+
+.bf-roadmap-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 2px #e0e0e0;
+    margin-bottom: 1rem;
+    background: #e0e0e0;
+
+    &.is-active {
+        background: var(--notion-blue);
+        box-shadow: 0 0 0 2px var(--notion-blue);
+    }
+}
+
+.bf-roadmap-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #999;
+
+    &.is-active {
+        color: var(--notion-text);
+    }
+}
+
+.bf-roadmap-description {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+    margin-top: 0.25rem;
+}        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        gap: 2rem;
+    }
+
+    .bf-roadmap-line {
+        top: 20px;
+        bottom: 20px;
+        left: 8px;
+        width: 2px;
+        height: auto;
+    }
+
+    .bf-roadmap-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .bf-roadmap-dot {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .bf-roadmap-badge {
+        position: static;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .bf-roadmap-badge-arrow {
+        display: none;
+    }
 }

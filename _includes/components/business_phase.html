@@ -3,23 +3,18 @@
     <h2>{{ site.data.business_phase.headline }}</h2>
 
     <!-- Stats Section -->
-    <div style="margin-bottom: 3rem;">
+    <div class="bf-stats-wrapper">
         <h3>{{ site.data.business_phase.main_copy }}</h3>
         <p>{{ site.data.business_phase.body_copy }}</p>
 
-        <div class="bf-stats-container" style="display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+        <div class="bf-stats-container">
             {% for stat in site.data.business_phase.stats %}
-            <div class="notion-callout"
-                style="flex: 1; min-width: 200px; display: flex; flex-direction: column; align-items: center; text-align: center; border-left: 4px solid var(--notion-blue);">
-                <div style="font-size: 0.9rem; color: var(--notion-secondary-text); font-weight: bold;">{{ stat.label }}
-                </div>
-                <div style="font-size: 3rem; font-weight: 800; color: var(--notion-text); line-height: 1.2;">{{
-                    stat.value }}</div>
-                <div style="font-size: 0.8rem; margin-top: 0.5rem;">{{ stat.description }}</div>
+            <div class="notion-callout bf-stat-card">
+                <div class="bf-stat-label">{{ stat.label }}</div>
+                <div class="bf-stat-value">{{ stat.value }}</div>
+                <div class="bf-stat-description">{{ stat.description }}</div>
                 {% if stat.note %}
-                <div
-                    style="font-size: 0.6rem; color: var(--notion-gray); margin-top: 0.5rem; text-align: left; line-height: 1.4;">
-                    {{ stat.note }}</div>
+                <div class="bf-stat-note">{{ stat.note }}</div>
                 {% endif %}
             </div>
             {% endfor %}
@@ -31,36 +26,25 @@
         <h3>{{ site.data.business_phase.future_title }}</h3>
         <p>{{ site.data.business_phase.future_copy | markdownify }}</p>
 
-        <div class="bf-roadmap-container"
-            style="display: flex; align-items: flex-start; justify-content: space-between; margin-top: 2rem; position: relative; padding: 60px 0 20px 0;">
+        <div class="bf-roadmap-container">
             <!-- Connecting Line -->
-            <div
-                style="position: absolute; top: 68px; left: 10%; right: 10%; height: 2px; background: #e0e0e0; z-index: 0;">
-            </div>
+            <div class="bf-roadmap-line"></div>
 
             {% for step in site.data.business_phase.roadmap %}
-            <div class="bf-roadmap-step"
-                style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1;">
+            <div class="bf-roadmap-step">
 
                 {% if step.you_are_here %}
-                <div
-                    style="position: absolute; top: -45px; background: var(--notion-red); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; white-space: nowrap;">
+                <div class="bf-roadmap-badge">
                     YOU ARE HERE
-                    <div
-                        style="position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid var(--notion-red);">
-                    </div>
+                    <div class="bf-roadmap-badge-arrow"></div>
                 </div>
                 {% endif %}
 
-                <div
-                    style="width: 16px; height: 16px; border-radius: 50%; background: {% if step.status == 'future' %}#e0e0e0{% else %}var(--notion-blue){% endif %}; border: 4px solid white; box-shadow: 0 0 0 2px {% if step.status == 'future' %}#e0e0e0{% else %}var(--notion-blue){% endif %}; margin-bottom: 1rem;">
-                </div>
+                <div class="bf-roadmap-dot {% unless step.status == 'future' %}is-active{% endunless %}"></div>
 
-                <div
-                    style="font-weight: bold; font-size: 1.1rem; color: {% if step.status == 'future' %}#999{% else %}var(--notion-text){% endif %};">
+                <div class="bf-roadmap-title {% unless step.status == 'future' %}is-active{% endunless %}">
                     {{ step.step }}</div>
-                <div style="font-size: 0.8rem; color: var(--notion-secondary-text); margin-top: 0.25rem;">{{
-                    step.description }}</div>
+                <div class="bf-roadmap-description">{{ step.description }}</div>
             </div>
             {% endfor %}
         </div>
