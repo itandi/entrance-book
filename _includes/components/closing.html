@@ -12,14 +12,11 @@
                     <div class="cto-message-role">{{ member.role }}</div>
                 </div>
             </div>
-            <div class="cto-message-headline">
-                <div class="closing-headline-accent">
-                    業界を変える。<br>技術への投資。<br>未来を創る。
-                </div>
-                不動産取引の未来を、共に創る<br>
-            </div>
         </div>
         <div class="cto-message-body">
+                <div class="closing-headline-accent">
+                    不動産取引の未来を、技術で書き換える。
+                </div>
             {{ member.candid_message | replace: "業界全体をつなぐ", "<strong>業界全体をつなぐ</strong>" | replace: "技術的挑戦",
             "<strong>技術的挑戦</strong>" | markdownify }}
         </div>

@@ -338,7 +338,6 @@ li {
 
 .notion-card-description {
     font-size: 0.875rem;
-    color: var(--notion-secondary-text);
 }
 
 .notion-blockquote {
@@ -516,6 +515,7 @@ li {
     display: flex;
     gap: 3rem;
     align-items: center;
+    justify-content: center;
     margin-bottom: 2.5rem;
 }
 
@@ -563,7 +563,6 @@ li {
     line-height: 1.8;
     color: var(--notion-text);
     white-space: normal;
-    /* Changed from pre-wrap to allow proper markdown rendering */
 }
 
 .cto-message-body p {
@@ -579,13 +578,6 @@ li {
         padding: 2rem 1.5rem;
     }
 
-    .cto-message-header {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-start;
-        text-align: left;
-    }
-
     .cto-message-image-wrapper {
         width: 160px;
         margin: 0;
@@ -593,10 +585,6 @@ li {
 
     .cto-message-image {
         height: 160px;
-    }
-
-    .cto-message-author {
-        text-align: left;
     }
 
     .cto-message-headline {
@@ -1177,6 +1165,121 @@ details.notion-toggle[open] summary::before {
   margin-top: auto;
 }
 
+/* Utilities & Common Component Styles */
+.notion-callout-blue {
+    background-color: #e7f3ff !important;
+}
+
+.mt-2em { margin-top: 2em !important; }
+.mt-3em { margin-top: 3em !important; }
+.mt-4em { margin-top: 4em !important; }
+.mb-3rem { margin-bottom: 3rem !important; }
+.relative { position: relative; }
+
+/* Closing Component */
+.closing-headline-accent {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Conditions Component */
+.condition-card-title {
+    font-size: 0.9rem;
+}
+
+.condition-card-text {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+}
+
+/* Selection Flow Component */
+.sf-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sf-step {
+    flex: 1;
+    min-width: 140px;
+    position: relative;
+}
+
+.sf-step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.sf-step-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sf-step-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.sf-step-description {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+}
+
+.sf-step-arrow {
+    position: absolute;
+    top: 50%;
+    right: -0.75rem;
+    transform: translateY(-50%);
+    color: var(--notion-gray);
+    z-index: 1;
+}
+
+/* Technology Component */
+.tech-layer-title {
+    font-size: 1rem;
+}
+
+.tech-policy-card {
+    background-color: var(--notion-gray-bg) !important;
+    border: none !important;
+}
+
+.tech-policy-label {
+    font-size: 0.75rem;
+    color: var(--notion-secondary-text);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tech-policy-text {
+    font-size: 0.875rem;
+}
+
+.tech-blog-loading {
+    font-size: 0.875rem;
+    color: var(--notion-secondary-text);
+}
+
+.tech-blog-list {
+    margin-top: 1.5em;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.tech-blog-more {
+    margin-top: 1.5em;
+    font-size: 0.875rem;
+}
+
 /* Business Phase Component */
 .bf-stats-wrapper {
     margin-bottom: 3rem;
@@ -1305,7 +1408,38 @@ details.notion-toggle[open] summary::before {
     font-size: 0.8rem;
     color: var(--notion-secondary-text);
     margin-top: 0.25rem;
-}        flex-direction: column;
+}
+
+/* Organization Component */
+.notion-card.role-people-management {
+    border-top: 4px solid var(--notion-blue);
+    .notion-card-commitment { color: var(--notion-blue); }
+}
+
+.notion-card.role-delivery-management {
+    border-top: 4px solid #ff9f40;
+    .notion-card-commitment { color: #ff9f40; }
+}
+
+.notion-card.role-systems-management {
+    border-top: 4px solid var(--notion-red);
+    .notion-card-commitment { color: var(--notion-red); }
+}
+
+@media (max-width: 768px) {
+    .sf-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .sf-step-arrow {
+        top: auto;
+        bottom: -1.5rem;
+        right: 50%;
+        transform: translateX(50%) rotate(90deg);
+    }
+
+    .bf-roadmap-container {
+        flex-direction: column;
         align-items: flex-start;
         padding: 20px 0;
         gap: 2rem;

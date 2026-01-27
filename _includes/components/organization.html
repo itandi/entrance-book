@@ -38,7 +38,7 @@
                 </div>
                 <div class="mgmt-caption">People + Delivery + Tech<br>全てを1人で抱える重荷</div>
             </div>
-            <div class="notion-text-center" style="position: relative;">
+            <div class="notion-text-center relative">
                 <div class="mgmt-header after">After: 3つの専門機能への分権</div>
                 <div class="mgmt-icon-after">
                     <div class="mgmt-circle people" title="People">👥</div>
@@ -52,11 +52,11 @@
 
     <div class="notion-grid-3">
         {% for role in site.data.organization.management_structure.roles %}
-        <div class="notion-card" style="border-top: 4px solid {{ role.color }};">
+        <div class="notion-card role-{{ role.title | slugify }}">
             <div class="notion-card-title">{{ role.title }}<br><span class="notion-card-subtitle-small">{{ role.subtitle
                     }}</span>
             </div>
-            <p class="notion-card-commitment" style="color: {{ role.color }};">
+            <p class="notion-card-commitment">
                 {{ role.commitment }}</p>
             <ul class="notion-list notion-list-no-margin">
                 {% for item in role.items %}
