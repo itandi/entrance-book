@@ -1,8 +1,18 @@
 <div class="notion-section">
-    <div class="notion-callout">
-        <div class="notion-callout-icon">✍️</div>
-        <div class="notion-callout-content">
-            最新のエンジニアブログ記事は <a href="https://tech.itandi.co.jp/" target="_blank">ITANDI Tech Blog</a> で公開されています。
-        </div>
+    <h2>📚 イタンジをもっと知る</h2>
+
+    <div class="blog-cards-container">
+        {% for blog in site.data.blogs %}
+        <a href="{{ blog.url }}" target="_blank" class="blog-card">
+            <div class="blog-card-image">
+                <img src="{{ blog.image | relative_url }}" alt="{{ blog.alt }}">
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">{{ blog.title }}</h3>
+                <p class="blog-card-description">{{ blog.description }}</p>
+                <p class="blog-card-url">{{ blog.display_url }}</p>
+            </div>
+        </a>
+        {% endfor %}
     </div>
 </div>

@@ -13,6 +13,13 @@
     --notion-red: #{$notion-red};
     --notion-blue: #{$notion-blue};
     --notion-gray-bg: #{$notion-gray-bg};
+
+    /* Brand Colors */
+    --primary-orange: #{$primary-orange};
+    --secondary-orange: #{$secondary-orange};
+    --light-gray-bg: #{$light-gray-bg};
+    --text-main: #{$text-main};
+    --text-muted: #{$text-muted};
 }
 
 * {
@@ -406,7 +413,6 @@ li {
 }
 
 .notion-section-description {
-    color: var(--notion-secondary-text);
     margin-bottom: 2em;
 }
 
@@ -452,10 +458,6 @@ li {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 1.5em 0;
-
-    &.secondary {
-        color: var(--notion-secondary-text);
-    }
 }
 
 // Organization Component Classes
@@ -1087,10 +1089,8 @@ details.notion-toggle[open] summary::before {
 
 /* Greeting Section */
 .greeting-section {
-    background-color: var(--light-gray-bg);
     border-radius: 12px;
     margin: 40px 0;
-    border-left: 5px solid var(--primary-orange);
 }
 
 .greeting-section h2 {
@@ -1100,5 +1100,90 @@ details.notion-toggle[open] summary::before {
 
 .greeting-section p {
     margin-bottom: 15px;
-    color: var(--text-muted);
+}
+
+/* Horizontal Blog Cards */
+.blog-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--light-gray-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
+  border-color: var(--primary-orange);
+}
+
+.blog-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.blog-card-image img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+  transform: scale(1.05);
+}
+
+.blog-card-content {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.blog-card-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.blog-card-url {
+  font-size: 0.8rem;
+  color: var(--primary-orange);
+  font-family: 'Courier New', monospace;
+  opacity: 0.8;
+  margin-top: auto;
+}
+
+/* Mobile responsive for blog cards */
+@media (max-width: 768px) {
+  .blog-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-card-content {
+    padding: 20px;
+  }
 }
