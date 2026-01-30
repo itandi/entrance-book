@@ -33,18 +33,20 @@
             {% for step in site.data.business_phase.roadmap %}
             <div class="bf-roadmap-step">
 
-                {% if step.you_are_here %}
-                <div class="bf-roadmap-badge">
-                    YOU ARE HERE
-                    <div class="bf-roadmap-badge-arrow"></div>
-                </div>
-                {% endif %}
-
                 <div class="bf-roadmap-dot {% unless step.status == 'future' %}is-active{% endunless %}"></div>
 
-                <div class="bf-roadmap-title {% unless step.status == 'future' %}is-active{% endunless %}">
-                    {{ step.step }}</div>
-                <div class="bf-roadmap-description">{{ step.description }}</div>
+                <div class="bf-roadmap-content">
+                    {% if step.you_are_here %}
+                    <div class="bf-roadmap-badge">
+                        YOU ARE HERE
+                        <div class="bf-roadmap-badge-arrow"></div>
+                    </div>
+                    {% endif %}
+
+                    <div class="bf-roadmap-title {% unless step.status == 'future' %}is-active{% endunless %}">
+                        {{ step.step }}</div>
+                    <div class="bf-roadmap-description">{{ step.description }}</div>
+                </div>
             </div>
             {% endfor %}
         </div>
