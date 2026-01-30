@@ -1,6 +1,5 @@
----
----
-
+--- 
+--- 
 @import "variables";
 
 
@@ -1072,6 +1071,7 @@ details.notion-toggle[open] summary::before {
     .notion-hero {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        padding-top: 0;
     }
 }
 
@@ -1092,77 +1092,81 @@ details.notion-toggle[open] summary::before {
 
 /* Horizontal Blog Cards */
 .blog-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
 }
 
 .blog-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--light-gray-bg);
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--notion-gray-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 .blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
-  border-color: var(--primary-orange);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.15);
+    border-color: var(--primary-orange);
 }
 
 .blog-card-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  flex-shrink: 0;
-  overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .blog-card-image img {
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .blog-card:hover .blog-card-image img {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .blog-card-content {
-  flex: 1;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--text-main);
-  line-height: 1.4;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--notion-text);
+    line-height: 1.4;
+
+    &:hover {
+        color: var(--primary-orange);
+    }
 }
 
 .blog-card-description {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-  line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    line-height: 1.6;
 }
 
 .blog-card-url {
-  font-size: 0.8rem;
-  color: var(--primary-orange);
-  font-family: 'Courier New', monospace;
-  opacity: 0.8;
-  margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--primary-orange);
+    font-family: 'Courier New', monospace;
+    opacity: 0.8;
+    margin-top: auto;
 }
 
 /* Utilities & Common Component Styles */
@@ -1170,11 +1174,25 @@ details.notion-toggle[open] summary::before {
     background-color: #e7f3ff !important;
 }
 
-.mt-2em { margin-top: 2em !important; }
-.mt-3em { margin-top: 3em !important; }
-.mt-4em { margin-top: 4em !important; }
-.mb-3rem { margin-bottom: 3rem !important; }
-.relative { position: relative; }
+.mt-2em {
+    margin-top: 2em !important;
+}
+
+.mt-3em {
+    margin-top: 3em !important;
+}
+
+.mt-4em {
+    margin-top: 4em !important;
+}
+
+.mb-3rem {
+    margin-bottom: 3rem !important;
+}
+
+.relative {
+    position: relative;
+}
 
 /* Closing Component */
 .closing-headline-accent {
@@ -1413,17 +1431,26 @@ details.notion-toggle[open] summary::before {
 /* Organization Component */
 .notion-card.role-people-management {
     border-top: 4px solid var(--notion-blue);
-    .notion-card-commitment { color: var(--notion-blue); }
+
+    .notion-card-commitment {
+        color: var(--notion-blue);
+    }
 }
 
 .notion-card.role-delivery-management {
     border-top: 4px solid #ff9f40;
-    .notion-card-commitment { color: #ff9f40; }
+
+    .notion-card-commitment {
+        color: #ff9f40;
+    }
 }
 
 .notion-card.role-systems-management {
     border-top: 4px solid var(--notion-red);
-    .notion-card-commitment { color: var(--notion-red); }
+
+    .notion-card-commitment {
+        color: var(--notion-red);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1431,6 +1458,7 @@ details.notion-toggle[open] summary::before {
         flex-direction: column;
         gap: 2rem;
     }
+
     .sf-step-arrow {
         top: auto;
         bottom: -1.5rem;
@@ -1471,6 +1499,152 @@ details.notion-toggle[open] summary::before {
     }
 
     .bf-roadmap-badge-arrow {
+        display: none;
+    }
+}
+
+/* Team Topologies Diagram */
+.topology-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: var(--notion-hover);
+    padding: 40px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--notion-border);
+    margin-bottom: 2em;
+}
+
+.topology-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--notion-secondary-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.topology-stream-aligned {
+    width: 100%;
+}
+
+.topology-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.topology-card {
+    padding: 20px 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.stream-card {
+    background: var(--notion-bg);
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.topology-connector {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid var(--secondary-orange);
+    position: relative;
+}
+
+.arrow-up::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: -2px;
+    width: 4px;
+    height: 15px;
+    background: var(--secondary-orange);
+}
+
+.topology-platform {
+    width: 100%;
+}
+
+.platform-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.platform-layer {
+    border: 2px solid var(--notion-blue);
+    color: var(--notion-blue);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.platform-layer-title {
+    font-weight: 700;
+}
+
+.platform-areas {
+    display: flex;
+    gap: 8px;
+}
+
+.platform-area-tag {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Callout Variations */
+.notion-callout-blue {
+    background-color: rgba(0, 120, 223, 0.05);
+    border: 1px solid rgba(0, 120, 223, 0.2);
+}
+
+.mt-1em {
+    margin-top: 1em !important;
+}
+
+.mb-1em {
+    margin-bottom: 1em !important;
+}
+
+@media (max-width: 768px) {
+    .topology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-layer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .topology-connector {
         display: none;
     }
 }

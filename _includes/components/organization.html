@@ -12,43 +12,82 @@
         {% endfor %}
     </div>
 
-    <div class="notion-callout mb-3em">
-        <div class="notion-callout-icon">{{ site.data.organization.phase.icon }}</div>
-        <div class="notion-callout-content">
-            <strong>{{ site.data.organization.phase.title }}</strong>
-            <p class="notion-callout-text">
-                {{ site.data.organization.phase.description }}
-            </p>
+    <h3>{{ site.data.organization.team_topologies.headline }}</h3>
+    <p class="notion-section-description">
+        <strong>{{ site.data.organization.team_topologies.sub_headline }}</strong><br>
+        {{ site.data.organization.team_topologies.description }}
+    </p>
+
+    <!-- Team Topologies Diagram -->
+    <div class="topology-container mb-3em">
+        <div class="topology-stream-aligned">
+            <div class="topology-label">{{ site.data.organization.team_topologies.stream_aligned.title }}</div>
+            <div class="topology-grid">
+                {% for team in site.data.organization.team_topologies.stream_aligned.teams %}
+                <div class="topology-card stream-card">
+                    <div class="topology-card-title">{{ team.name }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="topology-connector">
+            <div class="arrow-up"></div>
+            <div class="arrow-up"></div>
+            <div class="arrow-up"></div>
+        </div>
+
+        <div class="topology-platform">
+            <div class="topology-label">{{ site.data.organization.team_topologies.platform.title }}</div>
+            <div class="platform-layers">
+                {% for group in site.data.organization.team_topologies.platform.groups %}
+                <div class="platform-layer">
+                    <div class="platform-layer-title">{{ group.name }}</div>
+                    <div class="platform-areas">
+                        {% for area in group.areas %}
+                        <span class="platform-area-tag">{{ area }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
+
+    <!-- Team Details -->
+    <div class="notion-grid-2">
+        <div class="notion-card">
+            <h4>{{ site.data.organization.team_topologies.stream_aligned.title }}</h4>
+            <p class="notion-card-commitment">{{ site.data.organization.team_topologies.stream_aligned.concept }}</p>
+            <p class="notion-card-description">{{ site.data.organization.team_topologies.stream_aligned.description }}
+            </p>
+            <ul class="notion-list-no-margin mt-1em">
+                {% for team in site.data.organization.team_topologies.stream_aligned.teams %}
+                <li class="notion-list-item"><strong>{{ team.name }}:</strong> {{ team.description }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="notion-card">
+            <h4>{{ site.data.organization.team_topologies.platform.title }}</h4>
+            <p class="notion-card-commitment">{{ site.data.organization.team_topologies.platform.concept }}</p>
+            <p class="notion-card-description">{{ site.data.organization.team_topologies.platform.description }}</p>
+            <div class="mt-1em">
+                {% for group in site.data.organization.team_topologies.platform.groups %}
+                <div class="mb-1em">
+                    <strong>{{ group.name }}:</strong><br>
+                    <span class="notion-card-description">{{ group.description }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="notion-spacer-4em"></div>
 
     <h3>{{ site.data.organization.management_structure.headline }}</h3>
     <p class="notion-section-description">
         {{ site.data.organization.management_structure.description }}
     </p>
-
-    <!-- Management Evolution Diagram -->
-    <div class="management-evolution">
-        <div class="notion-grid-2 notion-grid-centered">
-            <div class="notion-text-center">
-                <div class="mgmt-header">Before: 従来のマネージャー</div>
-                <div class="mgmt-icon-before">
-                    👤
-                    <div class="mgmt-limit-badge">限界</div>
-                </div>
-                <div class="mgmt-caption">People + Delivery + Tech<br>全てを1人で抱える重荷</div>
-            </div>
-            <div class="notion-text-center relative">
-                <div class="mgmt-header after">After: 3つの専門機能への分権</div>
-                <div class="mgmt-icon-after">
-                    <div class="mgmt-circle people" title="People">👥</div>
-                    <div class="mgmt-circle delivery" title="Delivery">🚀</div>
-                    <div class="mgmt-circle systems" title="Systems">🛠️</div>
-                </div>
-                <div class="mgmt-caption bold">強みを活かし、<br>相乗効果を生む体制</div>
-            </div>
-        </div>
-    </div>
 
     <div class="notion-grid-3">
         {% for role in site.data.organization.management_structure.roles %}
