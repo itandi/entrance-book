@@ -1,5 +1,5 @@
 .tech-layer-title {
-    font-size: 1rem;
+    font-size: $font-size-base;
 }
 
 .tech-policy-card {
@@ -8,25 +8,25 @@
 }
 
 .tech-policy-label {
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
     color: var(--notion-secondary-text);
     font-weight: 600;
     text-transform: uppercase;
 }
 
 .tech-policy-text {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
 }
 
 /* Tech Blog List */
 .tech-blog-loading {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     color: var(--notion-secondary-text);
 }
 
 .tech-blog-list {
     margin-top: 1.5em;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     display: flex;
     flex-direction: column;
     gap: 0.75em;
@@ -34,7 +34,7 @@
 
 .tech-blog-more {
     margin-top: 1.5em;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
 }
 
 .tech-stack-items {
@@ -70,11 +70,11 @@
 }
 
 .tech-name {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     color: var(--notion-text);
     font-weight: 500;
 
     @media (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: $font-size-xs;
     }
 }

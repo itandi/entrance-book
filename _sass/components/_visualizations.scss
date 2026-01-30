@@ -20,13 +20,13 @@
     border-radius: 4px;
     font-weight: 600;
     background: #fff;
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     z-index: 2;
 
     &.center {
         border: 2px solid var(--notion-red);
         padding: 12px 24px;
-        font-size: 1rem;
+        font-size: $font-size-base;
     }
 
     &:nth-child(2) {
@@ -108,30 +108,30 @@
     }
 
     &.tag-small {
-        font-size: 0.875rem;
+        font-size: $font-size-sm;
         color: var(--notion-secondary-text);
 
         @media (max-width: 768px) {
-            font-size: 0.75rem;
+            font-size: $font-size-xs;
         }
     }
 
     &.tag-medium {
-        font-size: 1.125rem;
+        font-size: $font-size-md;
         color: var(--notion-text);
 
         @media (max-width: 768px) {
-            font-size: 1rem;
+            font-size: $font-size-base;
         }
     }
 
     &.tag-large {
-        font-size: 1.5rem;
+        font-size: $font-size-xl;
         color: var(--notion-red);
         font-weight: 700;
 
         @media (max-width: 768px) {
-            font-size: 1.25rem;
+            font-size: $font-size-lg;
         }
     }
 }
@@ -164,7 +164,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.5rem;
+        font-size: $font-size-super;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
         .mgmt-limit-badge {
@@ -173,7 +173,7 @@
             right: -10px;
             background: var(--notion-red);
             color: #fff;
-            font-size: 0.7rem;
+            font-size: $font-size-xs;
             padding: 4px 8px;
             border-radius: 12px;
             font-weight: 700;
@@ -192,7 +192,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: $font-size-xl;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin-right: -20px;
 
@@ -219,7 +219,7 @@
 
     .mgmt-caption {
         margin-top: 1em;
-        font-size: 0.8rem;
+        font-size: $font-size-xs;
         line-height: 1.4;
 
         &.bold {
@@ -244,7 +244,7 @@
         font-weight: 700;
         color: var(--notion-blue);
         margin-bottom: 2em;
-        font-size: 1.1rem;
+        font-size: $font-size-md;
     }
 
     .flywheel-viz {
@@ -269,7 +269,7 @@
         padding: 10px 15px;
         border: 2px solid var(--notion-blue);
         border-radius: 8px;
-        font-size: 0.75rem;
+        font-size: $font-size-xs;
         font-weight: 700;
         width: 140px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -306,7 +306,7 @@
 
     .flywheel-footer {
         margin-top: 3em;
-        font-size: 0.85rem;
+        font-size: $font-size-sm;
         font-weight: 600;
         color: var(--notion-secondary-text);
     }

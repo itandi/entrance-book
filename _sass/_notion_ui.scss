@@ -25,7 +25,7 @@
 }
 
 .notion-callout-content-sm {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     line-height: 1.6;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .notion-list-no-margin {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     margin-left: 0;
 }
 
@@ -55,7 +55,7 @@ hr {
     padding-top: 20px;
     border-top: 1px solid var(--notion-border);
     color: var(--notion-secondary-text);
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
 }
 
 .notion-hero {
@@ -71,7 +71,7 @@ hr {
 }
 
 .notion-hero-title {
-    font-size: 2.5rem;
+    font-size: $font-size-super;
     font-weight: 800;
     line-height: 1.2;
     margin: 0;
@@ -111,30 +111,30 @@ hr {
 
 .notion-card-title {
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: $font-size-md;
     margin-bottom: 4px;
 }
 
 .notion-card-description {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
 }
 
 .notion-card-subtitle {
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
     color: var(--notion-secondary-text);
     text-transform: uppercase;
     font-weight: 600;
 }
 
 .notion-card-subtitle-small {
-    font-size: 0.8rem;
+    font-size: $font-size-xs;
     font-weight: 400;
     color: var(--notion-secondary-text);
 }
 
 .notion-card-list {
     margin: 8px 0;
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
 }
 
 .notion-card-link-wrapper {
@@ -142,7 +142,7 @@ hr {
 }
 
 .notion-card-link {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     color: var(--notion-secondary-text);
     text-decoration: none;
     display: inline-flex;
@@ -151,7 +151,7 @@ hr {
 }
 
 .notion-card-commitment {
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -160,7 +160,7 @@ hr {
     border-left: 3px solid var(--notion-text);
     padding-left: 1.25em;
     margin: 1.5em 0;
-    font-size: 1.125rem;
+    font-size: $font-size-md;
     color: var(--notion-secondary-text);
 }
 

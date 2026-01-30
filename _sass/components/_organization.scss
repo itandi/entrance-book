@@ -36,7 +36,7 @@
 }
 
 .topology-label {
-    font-size: 0.8rem;
+    font-size: $font-size-xs;
     font-weight: 700;
     color: var(--notion-secondary-text);
     text-transform: uppercase;
@@ -159,7 +159,7 @@
 }
 
 .notion-member-role {
-    font-size: 0.875rem;
+    font-size: $font-size-sm;
     color: var(--notion-secondary-text);
     font-weight: 400;
     display: block;
@@ -167,7 +167,7 @@
 }
 
 .notion-member-profile {
-    font-size: 1rem;
+    font-size: $font-size-base;
     margin-top: 1em;
     color: var(--notion-text);
     line-height: 1.6;

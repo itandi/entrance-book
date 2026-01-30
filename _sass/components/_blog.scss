@@ -55,7 +55,7 @@
 }
 
 .blog-card-title {
-    font-size: 1.2rem;
+    font-size: $font-size-lg;
     font-weight: 700;
     margin-bottom: 12px;
     color: var(--notion-text);
@@ -64,13 +64,13 @@
 }
 
 .blog-card-description {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     margin-bottom: 16px;
     line-height: 1.6;
 }
 
 .blog-card-url {
-    font-size: 0.8rem;
+    font-size: $font-size-xs;
     color: var(--primary-orange);
     font-family: 'Courier New', monospace;
     opacity: 0.8;
@@ -89,13 +89,13 @@
 }
 
 .blog-post-date {
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
     color: var(--notion-secondary-text);
     margin-bottom: 8px;
 }
 
 .blog-post-title {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     line-height: 1.4;
     margin-bottom: 0;
 }

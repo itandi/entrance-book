@@ -20,25 +20,25 @@
 }
 
 .bf-stat-label {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     color: var(--notion-secondary-text);
     font-weight: bold;
 }
 
 .bf-stat-value {
-    font-size: 3rem;
+    font-size: $font-size-hero;
     font-weight: 800;
     color: var(--notion-text);
     line-height: 1.2;
 }
 
 .bf-stat-description {
-    font-size: 0.8rem;
+    font-size: $font-size-xs;
     margin-top: 0.5rem;
 }
 
 .bf-stat-note {
-    font-size: 0.6rem;
+    font-size: $font-size-xs;
     color: var(--notion-gray);
     margin-top: 0.5rem;
     text-align: left;
@@ -116,7 +116,7 @@
     color: white;
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 0.75rem;
+    font-size: $font-size-xs;
     font-weight: bold;
     white-space: nowrap;
 
@@ -165,7 +165,7 @@
 
 .bf-roadmap-title {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: $font-size-md;
     color: #999;
 
     &.is-active {
@@ -174,7 +174,7 @@
 }
 
 .bf-roadmap-description {
-    font-size: 0.8rem;
+    font-size: $font-size-xs;
     color: var(--notion-secondary-text);
     margin-top: 0.25rem;
 }
