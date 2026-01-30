@@ -15,52 +15,31 @@ docker-compose up
 docker-compose down
 ```
 
-起動後、 [http://localhost:4000](http://localhost:4000) にアクセスしてください。ファイルを編集すると自動的にリロードされます。
-
-## 🛠 メンテナンスガイド
-
+起動後、 [http://localhost:4000/entrance-book](http://localhost:4000/entrance-book) にアクセスしてください。ファイルを編集すると自動的にリロードされます。
 
 ## 📂 ディレクトリ構造
 
-
-
 プロジェクトのルートディレクトリに Jekyll のリソースが配置されています。
 
-
-
 ```text
-
 .
-
 ├── docker-compose.yml       # ローカル開発環境の定義
-
-├── _config.yml              # Jekyll 設定（コレクション定義など）
-
+├── _config.yml              # Jekyll 設定（タイトル、baseurlなど）
 ├── _data/                   # コンテンツデータ（YAML形式）
-
 ├── _includes/               # 再利用可能なコンポーネント
-
+│   └── components/          # 各セクションのHTML
 ├── _layouts/                # ベースレイアウト
-
-├── _sections/               # ページの各セクション（Markdown）
-
-├── assets/                  # 静的ファイル（CSS, JS, 画像）
-
-├── index.md                 # メインエントリ（セクションを自動結合）
-
-├── Gemfile                  # Ruby 依存関係
-
-└── docs/                    # 設計資料・要件定義
-
+├── _sass/                   # SCSS スタイル定義
+├── assets/                  # 静的ファイル（コンパイル済みCSS, 画像など）
+├── index.md                 # メインエントリ（コンポーネントを結合）
+└── Gemfile                  # Ruby 依存関係
 ```
-
-
 
 ## 🛠 メンテナンスガイド
 
 ### コンテンツの更新（データ駆動）
 数値やリストなどの頻繁に更新される情報は、 `_data/` 配下の YAML ファイルに集約されています。
-HTMLを編集することなく、YAMLを書き換えるだけでサイトの内容を更新できます。
+HTMLを直接編集することなく、YAMLを書き換えるだけでサイトの内容を更新できます。
 
 - `metrics.yml`: 実績数値
 - `tech_stack.yml`: 技術スタック情報
@@ -71,40 +50,25 @@ HTMLを編集することなく、YAMLを書き換えるだけでサイトの内
 - `business_phase.yml`: 事業フェーズ情報
 - `dev_culture.yml`: 開発カルチャー
 - `selection_flow.yml`: 選考フロー
+- `organization.yml`: 組織図・チーム情報
+- `blogs.yml`: 最新のブログ記事情報
+- `product_flywheel.yml`: プロダクトの成長サイクル
 
-### セクションの並び替え・追加
-`_sections/` 配下の Markdown ファイルは Jekyll の Collections 機能で管理されています。
-ファイル名のプレフィックス(`10-`, `20-`, `30-`...)を変更することで、トップページでの表示順を簡単に変更できます。
+### コンポーネント・セクションの更新
+トップページ（`index.md`）は `_includes/components/` 配下の HTML ファイルを読み込むことで構成されています。
 
-#### 命名規則
+#### セクションの構成変更
+`index.md` 内の `{% include components/xxx.html %}` の記述順を入れ替えることで、ページの並び順を変更できます。
 
-**フォーマット**: `{番号}-{スラッグ}.md`
-
-- **基本インクリメント**: 10刻み（10, 20, 30, 40...）を使用
-- **中間セクション**: 5刻み（15, 25, 45...）を使用
-- **さらに細かい挿入**: 必要に応じて1刻みも許容（11, 12...）
-
-**例**:
-```
-_sections/
-├── 10-mission.md           # ミッション・ビジョン
-├── 15-business-phase.md    # 事業フェーズ（中間セクション）
-├── 20-product.md           # プロダクト
-├── 30-technology.md        # テクノロジー
-├── 40-organization.md      # 組織
-├── 45-selection-flow.md    # 選考フロー（中間セクション）
-├── 50-conditions.md        # 募集要項
-├── 60-closing.md           # クロージング
-└── 90-cta-area.md          # CTAエリア
-```
-`assets/css/lp.css` にて、ブランドカラー（イタンジ・オレンジ）やヘキサゴンモチーフのスタイルを一括管理しています。
+#### デザインの変更
+共通のスタイルは `_sass/` 配下の各ファイル（`_base.scss`, `_variables.scss` など）で管理されています。全体のテーマや共通パーツのスタイルを調整する場合はこちらを編集してください。
 
 ## 🌐 デプロイ
 
 1. このリポジトリを GitHub にプッシュします。
 2. リポジリの **Settings > Pages** を開きます。
-3. **Build and deployment > Source** で `Deploy from a branch` を選択します。
-4. **Branch** で `main`（または公開用ブランチ）を選択し、ディレクトリを `/(root)` に設定して保存します。
+3. **Build and deployment > Source** で `GitHub Actions` を選択します。
+   - （または `Deploy from a branch` で `main` ブランチを指定します）
 
 ---
 © 2026 ITANDI, Inc.
