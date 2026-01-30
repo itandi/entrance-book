@@ -1,0 +1,92 @@
+.cto-message-container {
+    background-color: var(--notion-hover);
+    background-image: url('../images/cto_bg_pattern.svg');
+    background-repeat: repeat;
+    background-size: 400px;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--notion-border);
+
+    @media (max-width: 768px) {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.cto-message-header {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.cto-message-image-wrapper {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        width: 160px;
+        margin: 0;
+    }
+}
+
+.cto-message-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--notion-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    @media (max-width: 768px) {
+        height: 160px;
+    }
+}
+
+.cto-message-author {
+    margin-top: 1rem;
+}
+
+.cto-message-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.cto-message-role {
+    font-size: 0.85rem;
+    color: var(--notion-secondary-text);
+}
+
+.cto-message-headline {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--notion-text);
+    border-left: 4px solid var(--notion-red);
+    padding-left: 1.5rem;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 1.4rem;
+        padding-left: 1rem;
+    }
+}
+
+.cto-message-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--notion-text);
+    white-space: normal;
+
+    p {
+        margin-bottom: 1.25em;
+    }
+
+    strong {
+        color: var(--notion-red);
+    }
+}

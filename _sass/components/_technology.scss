@@ -1,0 +1,80 @@
+.tech-layer-title {
+    font-size: 1rem;
+}
+
+.tech-policy-card {
+    background-color: var(--notion-gray-bg) !important;
+    border: none !important;
+}
+
+.tech-policy-label {
+    font-size: 0.75rem;
+    color: var(--notion-secondary-text);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tech-policy-text {
+    font-size: 0.875rem;
+}
+
+/* Tech Blog List */
+.tech-blog-loading {
+    font-size: 0.875rem;
+    color: var(--notion-secondary-text);
+}
+
+.tech-blog-list {
+    margin-top: 1.5em;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.tech-blog-more {
+    margin-top: 1.5em;
+    font-size: 0.875rem;
+}
+
+.tech-stack-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: var(--notion-hover);
+    }
+}
+
+.tech-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.tech-name {
+    font-size: 0.875rem;
+    color: var(--notion-text);
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
+}

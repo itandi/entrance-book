@@ -1,0 +1,196 @@
+/* Greeting Section */
+.greeting-section {
+    border-radius: 12px;
+    margin: 40px 0;
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+}
+
+/* Closing Component */
+.closing-headline-accent {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Conditions Component */
+.condition-card-title {
+    font-size: 0.9rem;
+}
+
+.condition-card-text {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+}
+
+/* Selection Flow Component */
+.sf-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.sf-step {
+    flex: 1;
+    min-width: 140px;
+    position: relative;
+}
+
+.sf-step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.sf-step-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sf-step-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.sf-step-description {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+}
+
+.sf-step-arrow {
+    position: absolute;
+    top: 50%;
+    right: -0.75rem;
+    transform: translateY(-50%);
+    color: var(--notion-gray);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        top: auto;
+        bottom: -1.5rem;
+        right: 50%;
+        transform: translateX(50%) rotate(90deg);
+    }
+}
+
+/* Mission Section */
+.notion-mission-label {
+    font-size: 0.8rem;
+    color: var(--notion-secondary-text);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.notion-pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1.5rem 0;
+}
+
+.notion-pill {
+    background-color: var(--notion-hover);
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    color: var(--notion-text);
+    border: 1px solid var(--notion-border);
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: rgba(55, 53, 47, 0.08);
+    }
+}
+
+/* Values Checklist */
+.notion-checklist-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.notion-checklist-group h4 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notion-checklist-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+
+    &::before {
+        content: "☑︎";
+        color: var(--notion-secondary-text);
+    }
+}
+
+/* Global Utilities */
+.mb-3em {
+    margin-bottom: 3em !important;
+}
+
+.mb-3rem {
+    margin-bottom: 3rem !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.mt-2em {
+    margin-top: 2em !important;
+}
+
+.mt-3em {
+    margin-top: 3em !important;
+}
+
+.mt-4em {
+    margin-top: 4em !important;
+}
+
+.notion-text-center {
+    text-align: center;
+}
+
+.notion-spacer-4em {
+    margin-top: 4em;
+}
+
+.notion-grid-centered {
+    align-items: center;
+    gap: 4em;
+}
+
+.relative {
+    position: relative;
+}

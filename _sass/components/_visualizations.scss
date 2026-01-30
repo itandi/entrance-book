@@ -1,0 +1,323 @@
+/* Vision Diagram */
+.vision-diagram {
+    position: relative;
+    height: 300px;
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: 400px;
+        flex-direction: column;
+    }
+}
+
+.vision-node {
+    position: absolute;
+    padding: 8px 16px;
+    border: 1px solid var(--notion-text);
+    border-radius: 4px;
+    font-weight: 600;
+    background: #fff;
+    font-size: 0.9rem;
+    z-index: 2;
+
+    &.center {
+        border: 2px solid var(--notion-red);
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    &:nth-child(2) {
+        top: 0;
+        left: 20%;
+    }
+
+    &:nth-child(3) {
+        top: 0;
+        right: 20%;
+    }
+
+    &:nth-child(4) {
+        bottom: 0;
+        left: 20%;
+    }
+
+    &:nth-child(5) {
+        bottom: 0;
+        right: 20%;
+    }
+
+    @media (max-width: 768px) {
+        position: static;
+        margin-bottom: 12px;
+    }
+}
+
+.vision-connector {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    border: 1px dashed var(--notion-border);
+    border-radius: 50%;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+/* Tag Cloud Styles */
+.tag-cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+    background-color: var(--notion-gray-bg);
+    border-radius: 8px;
+    min-height: 200px;
+
+    @media (max-width: 768px) {
+        padding: 2rem 1rem;
+        gap: 12px 16px;
+    }
+}
+
+.tag-cloud-item {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--notion-bg);
+    border: 1px solid var(--notion-border);
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: var(--notion-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    &.tag-small {
+        font-size: 0.875rem;
+        color: var(--notion-secondary-text);
+
+        @media (max-width: 768px) {
+            font-size: 0.75rem;
+        }
+    }
+
+    &.tag-medium {
+        font-size: 1.125rem;
+        color: var(--notion-text);
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &.tag-large {
+        font-size: 1.5rem;
+        color: var(--notion-red);
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+/* Management Evolution Diagram */
+.management-evolution {
+    margin-bottom: 3em;
+    background: var(--notion-gray-bg);
+    padding: 2em;
+    border-radius: 8px;
+
+    .mgmt-header {
+        font-weight: 600;
+        margin-bottom: 1em;
+        color: var(--notion-secondary-text);
+
+        &.after {
+            color: var(--notion-blue);
+        }
+    }
+
+    .mgmt-icon-before {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        background: #fff;
+        border: 2px solid #ddd;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        .mgmt-limit-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--notion-red);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+    }
+
+    .mgmt-icon-after {
+        display: flex;
+        justify-content: center;
+        gap: -15px;
+
+        .mgmt-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-right: -20px;
+
+            &.people {
+                background: rgba(54, 162, 235, 0.1);
+                border: 2px solid var(--notion-blue);
+                z-index: 3;
+            }
+
+            &.delivery {
+                background: rgba(255, 159, 64, 0.1);
+                border: 2px solid #ff9f40;
+                z-index: 2;
+            }
+
+            &.systems {
+                background: rgba(255, 99, 132, 0.1);
+                border: 2px solid var(--notion-red);
+                z-index: 1;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .mgmt-caption {
+        margin-top: 1em;
+        font-size: 0.8rem;
+        line-height: 1.4;
+
+        &.bold {
+            font-weight: 600;
+        }
+    }
+}
+
+/* Data Flywheel Visualization */
+.flywheel-container {
+    background: var(--notion-gray-bg);
+    padding: 2em;
+    border-radius: 12px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+        margin: 4em 0;
+        transform: scale(0.8);
+    }
+
+    .flywheel-title {
+        font-weight: 700;
+        color: var(--notion-blue);
+        margin-bottom: 2em;
+        font-size: 1.1rem;
+    }
+
+    .flywheel-viz {
+        position: relative;
+        display: inline-block;
+    }
+
+    .flywheel-circle {
+        width: 240px;
+        height: 240px;
+        border: 3px dashed var(--notion-blue);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: spin 20s linear infinite;
+    }
+
+    .flywheel-node {
+        position: absolute;
+        background: #fff;
+        padding: 10px 15px;
+        border: 2px solid var(--notion-blue);
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 140px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translate(-50%, -50%);
+
+        span {
+            color: var(--notion-blue);
+        }
+
+        &.node-top {
+            top: 0;
+            left: 50%;
+        }
+
+        &.node-right {
+            top: 50%;
+            right: -70px;
+            transform: translateY(-50%);
+        }
+
+        &.node-bottom {
+            bottom: -35px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        &.node-left {
+            top: 50%;
+            left: -70px;
+            transform: translateY(-50%);
+        }
+    }
+
+    .flywheel-footer {
+        margin-top: 3em;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--notion-secondary-text);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
