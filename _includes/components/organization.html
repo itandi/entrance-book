@@ -45,7 +45,7 @@
                     <div class="platform-layer-title">{{ group.name }}</div>
                     <div class="platform-areas">
                         {% for area in group.areas %}
-                        <span class="platform-area-tag">{{ area }}</span>
+                        <span class="platform-area-tag">{{ area }}</span>{% unless forloop.last %} / {% endunless %}
                         {% endfor %}
                     </div>
                 </div>
