@@ -189,6 +189,10 @@
 .notion-grid-centered {
     align-items: center;
     gap: 4em;
+
+    @media (max-width: 768px) {
+        gap: 2em;
+    }
 }
 
 .relative {
