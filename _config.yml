@@ -1,12 +1,9 @@
 title: エンジニア採用エントランスページ | イタンジ株式会社
 description: テクノロジーで不動産取引をなめらかにするイタンジのエンジニア採用情報。
 baseurl: "/entrance-book"
-url: ""
+url: "https://itandi.github.io"
 google_fonts:
   - family: Inter
     weights: "400;700"
   - family: Noto Sans JP
     weights: "400;700"
-
-
-
