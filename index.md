@@ -44,5 +44,9 @@ layout: default
 </div>
 
 <div class="section-content">
+  {% include components/youtube.html %}
+</div>
+
+<div class="section-content">
   {% include components/cta_area.html %}
 </div>
