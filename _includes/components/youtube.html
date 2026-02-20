@@ -1,0 +1,93 @@
+<section class="youtube-section">
+  <div class="section-header">
+    <h2>YouTube</h2>
+  </div>
+
+  {% for category in site.data.youtube_links.categories %}
+  <div class="youtube-category">
+    <h3 class="category-title">{{ category.title }}</h3>
+    <div class="youtube-videos">
+      {% for item in category.items %}
+      <div class="youtube-video-item">
+        <h4 class="video-title">{{ item.name }}</h4>
+        {% assign video_id = item.url | split: "v=" | last %}
+        <div class="youtube-player">
+          <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/{{ video_id }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<style>
+  .youtube-section {
+    padding: 2rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #242424;
+  }
+
+  .youtube-category {
+    margin-bottom: 3rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #424242;
+  }
+
+  .youtube-videos {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .youtube-video-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #242424;
+  }
+
+  .youtube-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .youtube-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+</style>
