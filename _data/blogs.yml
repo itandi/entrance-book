@@ -4,21 +4,11 @@
   image: "/assets/images/forbes.webp"
   alt: "Forbes Japan"
 
-- title: "「技術的な誠実さ」を求めてイタンジを選んだ。不動産インフラの心臓部を支える、データ基盤エンジニアの本質的な開発とは。"
-  description: "データ連携基盤を支える、データエンジニアのマネージャー山崎が自身のキャリアについて語ります。"
-  url: "https://shanaiho.itandi.co.jp/n/n2e9c06980f8c"
-  image: "/assets/images/yamasaki.webp"
-  alt: "Yamasaki"
-
 - title: "なぜ私たちは「全ての人の不動産インフラ」を目指すのか。技術とプラットフォームが紡ぐ“データ優位性”の裏側"
   description: "イタンジが「全ての人の不動産インフラ」を目指す理由と、その核となる「データ優位性」についてお話しします。"
   url: "https://note.com/shoma07/n/n09e827062965"
   image: "/assets/images/cto-article.webp"
   alt: "CTO Article"
 
-- title: "イタンジ CTO が語るRubyとマルチプロダクト戦略"
-  description: "イタンジがRubyを採用した理由と、マルチプロダクト戦略についてCTOが語ります。"
-  url: "https://shanaiho.itandi.co.jp/n/n8458293e1940"
-  image: "/assets/images/tech-pr-blog.webp"
-  alt: "Tech PR Blog"
+
 
