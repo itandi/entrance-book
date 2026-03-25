@@ -1,0 +1,233 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    height: 57px;
+    padding: 0 0 0 12px;
+    background: #212529;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-header__brand:hover {
+    background: transparent;
+}
+
+.site-header__logo {
+    display: block;
+    width: 109px;
+    max-width: 100%;
+}
+
+.site-header__brand-label {
+    margin: 0;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.site-header__nav {
+    min-width: 0;
+    margin-left: auto;
+}
+
+.site-header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-header__nav-list li {
+    margin: 0;
+}
+
+.site-header__nav-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 57px;
+    padding: 0 18px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+
+.site-header__nav-list a:hover,
+.site-header__nav-list a:focus-visible {
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom-color: #fff;
+}
+
+.site-header__actions {
+    display: flex;
+    align-items: stretch;
+    align-self: stretch;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.site-header__entry-link,
+.site-header__menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 116px;
+    padding: 0 22px;
+    color: #fff;
+    text-decoration: none;
+    border: 0;
+    background: transparent;
+}
+
+.site-header__entry-link {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.site-header__entry-link:hover,
+.site-header__entry-link:focus-visible,
+.site-header__menu-button:hover,
+.site-header__menu-button:focus-visible {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.site-header__menu-button {
+    cursor: pointer;
+}
+
+.site-header__menu-icon {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.site-header__menu-icon span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header__menu-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.site-header.is-open .site-header__menu-icon span:first-child {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.site-header.is-open .site-header__menu-icon span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+@media (min-width: 961px) {
+    .site-header__menu-button {
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .site-header {
+        gap: 12px;
+    }
+
+    .site-header__brand-label {
+        display: none;
+    }
+
+    .site-header__nav {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        left: 0;
+        display: none;
+        padding: 12px 12px 16px;
+        background: rgba(33, 37, 41, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .site-header.is-open .site-header__nav {
+        display: block;
+    }
+
+    .site-header__nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .site-header__nav-list a {
+        min-height: auto;
+        padding: 14px 16px;
+        border-bottom: 0;
+        border-radius: 8px;
+    }
+
+    .site-header__actions {
+        margin-left: auto;
+    }
+
+    .site-header__entry-link,
+    .site-header__menu-button {
+        min-width: auto;
+        padding: 0 16px;
+    }
+
+    .site-header__entry-link {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        padding-left: 10px;
+    }
+
+    .site-header__logo {
+        width: 92px;
+    }
+
+    .site-header__actions {
+        margin-left: 0;
+    }
+
+    .site-header__entry-link,
+    .site-header__menu-button {
+        padding: 0 12px;
+    }
+
+    .site-header__entry-link {
+        min-width: 96px;
+    }
+
+    .site-header__menu-label {
+        display: none;
+    }
+}

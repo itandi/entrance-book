@@ -1,4 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const headerRoot = document.querySelector('[data-header-root]');
+    const headerToggle = document.querySelector('[data-header-toggle]');
+    const headerNavLinks = document.querySelectorAll('[data-header-nav] a');
+
+    const closeHeaderMenu = () => {
+        if (!headerRoot || !headerToggle) return;
+        headerRoot.classList.remove('is-open');
+        headerToggle.setAttribute('aria-expanded', 'false');
+        headerToggle.setAttribute('aria-label', 'メニューを開く');
+        document.body.classList.remove('site-header-open');
+    };
+
+    const openHeaderMenu = () => {
+        if (!headerRoot || !headerToggle) return;
+        headerRoot.classList.add('is-open');
+        headerToggle.setAttribute('aria-expanded', 'true');
+        headerToggle.setAttribute('aria-label', 'メニューを閉じる');
+        document.body.classList.add('site-header-open');
+    };
+
+    if (headerRoot && headerToggle) {
+        headerToggle.addEventListener('click', () => {
+            const isOpen = headerRoot.classList.contains('is-open');
+
+            if (isOpen) {
+                closeHeaderMenu();
+                return;
+            }
+
+            openHeaderMenu();
+        });
+
+        headerNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 960) {
+                    closeHeaderMenu();
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 960) {
+                closeHeaderMenu();
+            }
+        });
+    }
+
     // Fetch Blog Posts from multiple RSS feeds
     const fetchBlogPosts = (rssUrl, containerId) => {
         const blogContainer = document.getElementById(containerId);

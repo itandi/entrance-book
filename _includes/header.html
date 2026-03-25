@@ -1,16 +1,38 @@
-<header class="header">
-    <div class="container">
-        <nav class="nav">
-            <div class="logo">ITANDI ENGINEER</div>
-            <ul class="nav-links">
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#organization">Organization</a></li>
-                <li><a href="#conditions">Conditions</a></li>
-                <li><a href="https://herp.careers/careers/companies/itandi/jobs?parent-job-role-ids=engineer"
-                        class="btn btn--small btn--primary">Apply Now</a></li>
-            </ul>
-        </nav>
+<header class="site-header" data-header-root>
+    <a href="{{ '/' | relative_url }}" class="site-header__brand" aria-label="ITANDI 採用情報">
+        <img
+            class="site-header__logo"
+            src="{{ '/assets/images/itandi-recruit-logo.svg' | relative_url }}"
+            alt="ITANDI"
+        >
+        <p class="site-header__brand-label">採用情報</p>
+    </a>
+
+    <nav class="site-header__nav" aria-label="採用情報ナビゲーション" data-header-nav>
+        <ul class="site-header__nav-list">
+            <li><a href="#mission">理念を知る</a></li>
+            <li><a href="#business-phase">事業を知る</a></li>
+            <li><a href="#organization">メンバーを知る</a></li>
+            <li><a href="#metrics">数字で見る</a></li>
+            <li><a href="#youtube">公式コンテンツ</a></li>
+            <li><a href="#technology">環境を知る</a></li>
+        </ul>
+    </nav>
+
+    <div class="site-header__actions">
+        <a href="#conditions" class="site-header__entry-link">募集要項</a>
+        <button
+            type="button"
+            class="site-header__menu-button"
+            data-header-toggle
+            aria-expanded="false"
+            aria-label="メニューを開く"
+        >
+            <span class="site-header__menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+            </span>
+            <span class="site-header__menu-label">MENU</span>
+        </button>
     </div>
 </header>

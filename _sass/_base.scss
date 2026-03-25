@@ -28,6 +28,7 @@ body {
     color: var(--notion-text);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    padding-top: 57px;
 }
 
 /* Background Loop Styles */
@@ -117,6 +118,19 @@ body {
     @media (max-width: 768px) {
         padding: 24px 20px 40px 20px;
     }
+}
+
+.metric-number {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.metric-label {
+    margin-bottom: 8px;
+    color: var(--notion-secondary-text);
+    font-size: $font-size-sm;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
 .page-header {

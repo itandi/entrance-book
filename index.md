@@ -15,6 +15,10 @@ layout: default
 </div>
 
 <div class="section-content">
+  {% include components/metrics.html %}
+</div>
+
+<div class="section-content">
   {% include components/product.html %}
   {% include components/cta_area.html %}
 </div>
