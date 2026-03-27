@@ -16,7 +16,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-left: 4px solid var(--notion-blue);
 }
 
 .bf-stat-label {
@@ -112,7 +111,7 @@
 .bf-roadmap-badge {
     position: absolute;
     top: -45px;
-    background: var(--notion-red);
+    background: var(--primary-orange);
     color: white;
     padding: 4px 8px;
     border-radius: 4px;
@@ -152,8 +151,8 @@
     background: #e0e0e0;
 
     &.is-active {
-        background: var(--notion-blue);
-        box-shadow: 0 0 0 2px var(--notion-blue);
+        background: var(--primary-orange);
+        box-shadow: 0 0 0 2px var(--primary-orange);
     }
 
     @media (max-width: 768px) {
