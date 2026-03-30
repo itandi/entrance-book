@@ -107,13 +107,13 @@ body {
 }
 
 .page-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+    margin-top: 0;
     padding: 0 64px 80px 64px;
     min-height: 100vh;
     position: relative;
     background-color: var(--notion-bg);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 
     @media (max-width: 768px) {
         padding: 24px 20px 40px 20px;

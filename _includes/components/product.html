@@ -20,8 +20,11 @@
     <div class="notion-grid-2">
         {% for item in site.data.products.product_categories %}
         <div class="notion-card">
-            <div class="notion-card-subtitle">
-                {{ item.service_name }}</div>
+            {% if item.logo %}
+            <div class="notion-card-logo">
+                <img src="{{ item.logo | relative_url }}" alt="{{ item.service_name }} logo" />
+            </div>
+            {% endif %}
             <div class="notion-card-title">{{ item.title }}</div>
             {% if item.scope %}
             <ul class="notion-list notion-card-list">

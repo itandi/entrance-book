@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include components/hero.html %}
-
 {% include components/greeting.html %}
 
 <div class="section-content">
