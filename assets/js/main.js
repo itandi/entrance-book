@@ -50,4 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch both RSS feeds
     fetchBlogPosts('https://tech.itandi.co.jp/rss', 'blog-posts');
     fetchBlogPosts('https://shanaiho.itandi.co.jp/m/m7e4e938c8e73/rss', 'pr-blog-posts');
+
+    // Corp header mobile menu toggle
+    const menuBtn = document.querySelector('.corp-header__menu-btn');
+    const nav = document.querySelector('.corp-header__nav');
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('is-open');
+        });
+    }
 });

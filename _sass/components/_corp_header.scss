@@ -1,0 +1,702 @@
+// =============================================
+// Corp Header - Reproduced from corp-snippet
+// =============================================
+
+// CSS Variables for header
+:root {
+    --gap-v-nav: 0px;
+    --symbol-weight: 400;
+    --s-font-noto: 'Noto Sans JP', sans-serif;
+}
+
+// Base .sd class (scoped to corp-header)
+.corp-header {
+    // Base sd styles within header
+    .sd {
+        flex-wrap: nowrap;
+        max-width: 100%;
+        pointer-events: all;
+        z-index: 0;
+        -webkit-overflow-scrolling: touch;
+        align-content: center;
+        align-items: center;
+        display: flex;
+        flex: none;
+        flex-direction: column;
+        position: relative;
+        transition-property: all, --g-angle, --g-color-0, --g-position-0, --g-color-1, --g-position-1,
+            --g-color-2, --g-position-2, --g-color-3, --g-position-3, --g-color-4, --g-position-4,
+            --g-color-5, --g-position-5, --g-color-6, --g-position-6, --g-color-7, --g-position-7,
+            --g-color-8, --g-position-8, --g-color-9, --g-position-9, --g-color-10, --g-position-10,
+            --g-color-11, --g-position-11;
+        border: 0;
+        font-family: sans-serif;
+        line-height: 1;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        -webkit-font-smoothing: antialiased;
+        -webkit-backface-visibility: hidden;
+        box-sizing: border-box;
+        color: #333;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(.4, .4, 0, 1);
+        word-spacing: 1px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .sd.text {
+        align-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: visible;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .sd:where(.icon) {
+        align-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: visible;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .link {
+        cursor: pointer;
+    }
+
+    a,
+    a.text {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, .15);
+        background: transparent;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+    }
+
+    button {
+        background: transparent;
+        font-size: 100%;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+    }
+
+    // Material Icons
+    .material-icons {
+        align-items: center;
+        display: inline-flex;
+        font-family: Material Icons;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        justify-content: center;
+        letter-spacing: normal;
+        line-height: 1;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    // Material Symbols
+    .sd:where(.icon.material-symbols) {
+        align-items: center;
+        display: flex;
+        font-style: normal;
+        font-variation-settings: "FILL" var(--symbol-fill, 0), "wght" var(--symbol-weight, 400);
+        justify-content: center;
+        min-height: 1em;
+        min-width: 1em;
+    }
+
+    .sd.material-symbols-outlined {
+        font-family: Material Symbols Outlined;
+    }
+
+    .sd.material-symbols-weight-400 {
+        --symbol-weight: 400;
+    }
+}
+
+// Header container
+.sd[data-s-header] {
+    align-content: stretch;
+    align-items: stretch;
+    background: #212529ff;
+    border: 0 solid #e3e3e3;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 57px;
+    justify-content: space-between;
+    left: 0;
+    margin: 0;
+    opacity: 1;
+    padding: 0px 0px 0px 12px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    max-width: 100%;
+}
+
+// Logo link area
+.sd[data-s-logo-link] {
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+// Logo image
+.sd[data-s-logo-img] {
+    flex: none;
+    height: auto;
+    width: 109px;
+    max-width: 100%;
+}
+
+// "採用情報" label
+.sd[data-s-logo-text] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: auto;
+    line-height: 1.4;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+// Mobile toggle button (Material Icon "menu")
+.sd[data-s-mobile-toggle] {
+    color: #222222;
+    font-size: 24px;
+    display: none;
+}
+
+// Navigation ul
+.sd[data-s-nav] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0px;
+    justify-content: center;
+    margin: 0px 0px 0px 30px;
+    padding: 0px;
+    width: auto;
+    --gap-v-nav: 0px;
+    max-width: calc(100% - 30px);
+}
+
+// Nav item - 理念を知る
+.sd[data-s-nav-about] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 57px;
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+// Nav item link - 理念を知る
+.sd[data-s-link-about] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+// Hover underline - 理念を知る
+.sd[data-s-line-about] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-about]:hover .sd[data-s-line-about] {
+    transform: scale(1, 1);
+}
+
+// Nav item - 事業を知る
+.sd[data-s-nav-service] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - (var(--gap-v-nav) * 0));
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sd[data-s-link-service] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-line-service] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-service]:hover .sd[data-s-line-service] {
+    transform: scale(1, 1);
+}
+
+// Nav item - メンバーを知る
+.sd[data-s-nav-member] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - (var(--gap-v-nav) * 0));
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sd[data-s-btn-member] {
+    background: transparent;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.sd[data-s-text-member] {
+    color: #ffffffff;
+    font-family: var(--s-font-noto);
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-arrow-member] {
+    color: #ffffffff;
+    font-size: 16px;
+}
+
+.sd[data-s-line-member] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-member]:hover .sd[data-s-line-member] {
+    transform: scale(1, 1);
+}
+
+// Nav item - 数字で見る
+.sd[data-s-nav-infograph] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - (var(--gap-v-nav) * 0));
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sd[data-s-link-infograph] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-line-infograph] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-infograph]:hover .sd[data-s-line-infograph] {
+    transform: scale(1, 1);
+}
+
+// Nav item - 公式コンテンツ
+.sd[data-s-nav-contents] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - (var(--gap-v-nav) * 0));
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sd[data-s-link-contents] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    padding: 6px;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-line-contents] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-contents]:hover .sd[data-s-line-contents] {
+    transform: scale(1, 1);
+}
+
+// Nav item - 環境を知る
+.sd[data-s-nav-env] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - (var(--gap-v-nav) * 0));
+    justify-content: center;
+    padding: 0px 14px;
+    max-width: 100%;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.sd[data-s-link-env] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-line-env] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    transform: scale(0, 1);
+    transform-origin: center left;
+    width: 100%;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-env]:hover .sd[data-s-line-env] {
+    transform: scale(1, 1);
+}
+
+// Nav item - 募集要項 (orange button)
+.sd[data-s-nav-entry] {
+    align-content: center;
+    align-items: center;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 57px;
+    justify-content: center;
+    padding: 0px;
+    max-width: 100%;
+
+    &:hover {
+        filter: brightness(110%);
+    }
+}
+
+.sd[data-s-link-entry] {
+    align-content: center;
+    align-items: center;
+    background: #ff813aff;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 57px;
+    justify-content: center;
+    padding: 0px 28px;
+    width: auto;
+    max-width: 100%;
+}
+
+.sd[data-s-nav-entry]:hover .sd[data-s-link-entry]:hover {
+    background: #ff9960ff;
+}
+
+.sd[data-s-text-entry] {
+    color: #ffffffff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: auto;
+    line-height: 1.7;
+    padding: 0px;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+// MENU button (hamburger - hidden on desktop)
+.sd[data-s-menu-btn] {
+    align-content: center;
+    align-items: center;
+    display: none;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 7px;
+    height: 80px;
+    justify-content: center;
+    padding: 6px 0px 0px 0px;
+    width: 96px;
+    max-width: 100%;
+}
+
+.sd[data-s-menu-lines] {
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 0px;
+}
+
+.sd[data-s-menu-text] {
+    color: #ff813aff;
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    height: auto;
+    line-height: 1;
+    text-align: left;
+    width: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.sd[data-s-menu-line1] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    width: 32px;
+    max-width: 100%;
+}
+
+.sd[data-s-menu-line2] {
+    background: #ff813aff;
+    flex: none;
+    height: 2px;
+    width: 32px;
+    max-width: 100%;
+}
+
+// =============================================
+// Responsive - Mobile
+// =============================================
+@media (max-width: 1024px) {
+    // Hide nav items on mobile, show mobile toggle
+    .sd[data-s-mobile-toggle] {
+        display: none;
+    }
+
+    .sd[data-s-nav] {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    // Hide text nav items, show MENU button
+    .sd[data-s-nav-about],
+    .sd[data-s-nav-service],
+    .sd[data-s-nav-member],
+    .sd[data-s-nav-infograph],
+    .sd[data-s-nav-contents],
+    .sd[data-s-nav-env] {
+        display: none;
+    }
+
+    // Show MENU hamburger button
+    .sd[data-s-menu-btn] {
+        display: flex;
+    }
+
+    // 募集要項 link hidden, keep MENU button
+    .sd[data-s-link-entry] {
+        display: none;
+    }
+
+    .sd[data-s-nav-entry] {
+        height: auto;
+    }
+
+    // Mobile nav overlay when open
+    .corp-header__nav.is-open {
+        position: fixed;
+        top: 57px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #212529;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        padding: 20px;
+        z-index: 10;
+        overflow-y: auto;
+
+        .sd[data-s-nav-about],
+        .sd[data-s-nav-service],
+        .sd[data-s-nav-member],
+        .sd[data-s-nav-infograph],
+        .sd[data-s-nav-contents],
+        .sd[data-s-nav-env] {
+            display: flex;
+            height: auto;
+            padding: 12px 14px;
+        }
+
+        .sd[data-s-link-entry] {
+            display: flex;
+            width: 100%;
+        }
+
+        .sd[data-s-nav-entry] {
+            height: auto;
+        }
+
+        .sd[data-s-menu-btn] {
+            display: flex;
+        }
+    }
+}
