@@ -576,7 +576,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 7px;
-    height: 80px;
     justify-content: center;
     padding: 6px 0px 0px 0px;
     width: 96px;
@@ -697,6 +696,13 @@
 
         .sd[data-s-menu-btn] {
             display: flex;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 57px;
+            padding: 0;
+            background: #212529;
+            z-index: 11;
         }
     }
 }
