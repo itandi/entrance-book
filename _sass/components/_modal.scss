@@ -1,0 +1,48 @@
+// RubyKaigi Google Form Modal
+#rubykaigi-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+#rubykaigi-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 680px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px 24px 24px;
+
+  .rubykaigi-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+    padding: 4px 8px;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+}
