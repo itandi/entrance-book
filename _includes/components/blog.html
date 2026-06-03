@@ -5,9 +5,11 @@
     <div class="blog-cards-container">
         {% for blog in site.data.blogs %}
         <a href="{{ blog.url }}" target="_blank" class="blog-card">
+            {% if blog.image %}
             <div class="blog-card-image">
                 <img src="{{ blog.image | relative_url }}" alt="{{ blog.alt }}">
             </div>
+            {% endif %}
             <div class="blog-card-content">
                 <h3 class="blog-card-title">{{ blog.title }}</h3>
                 <p class="blog-card-description">{{ blog.description }}</p>

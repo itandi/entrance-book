@@ -1,8 +1,10 @@
-version: '3.8'
-
 services:
   site:
-    image: jekyll/jekyll:latest
+    platform: linux/arm64/v8
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: entrance-book-site:latest
     command: jekyll serve --livereload --force_polling --source /srv/jekyll --destination /srv/jekyll/_site
     ports:
       - "4000:4000"
