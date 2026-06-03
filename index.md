@@ -38,6 +38,10 @@ layout: default
 </div>
 
 <div class="section-content">
+  {% include components/member_articles.html %}
+</div>
+
+<div class="section-content">
   {% include components/blog.html %}
 </div>
 

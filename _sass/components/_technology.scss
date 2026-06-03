@@ -18,6 +18,64 @@
     font-size: $font-size-sm;
 }
 
+.podcast-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 0.75rem;
+}
+
+.podcast-card-header {
+    display: flex;
+    flex: 1;
+    gap: 0.75rem;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover .notion-card-title {
+        text-decoration: underline;
+    }
+}
+
+.podcast-card-image {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.podcast-card-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.podcast-icon-placeholder {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: var(--notion-gray-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.podcast-player {
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+}
+
 /* Tech Blog List */
 .tech-blog-loading {
     font-size: $font-size-sm;
