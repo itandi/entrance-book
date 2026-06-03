@@ -121,21 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // RubyKaigi modal
-    const rubykaigiOverlay = document.getElementById('rubykaigi-modal-overlay');
-    if (rubykaigiOverlay) {
-        const ref = new URLSearchParams(window.location.search).get('ref');
-        if (ref === 'rubykaigi') {
-            rubykaigiOverlay.classList.add('is-open');
-        }
-        const closeBtn = rubykaigiOverlay.querySelector('.rubykaigi-modal__close');
-        const closeModal = () => rubykaigiOverlay.classList.remove('is-open');
-        if (closeBtn) closeBtn.addEventListener('click', closeModal);
-        rubykaigiOverlay.addEventListener('click', (e) => {
-            if (e.target === rubykaigiOverlay) closeModal();
-        });
-    }
-
     // Corp header mobile menu toggle
     const menuBtn = document.querySelector('.corp-header__menu-btn');
     const nav = document.querySelector('.corp-header__nav');
