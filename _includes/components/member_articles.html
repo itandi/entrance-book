@@ -3,12 +3,17 @@
     <h2 id="member-articles">メンバーを知る</h2>
     <p>イタンジで働くメンバーのリアルな声をご覧ください。それぞれのバックグラウンドや働き方、やりがいについて語っています。</p>
 
-    <div class="notion-grid-3">
+    <div class="blog-cards-container">
         {% for article in site.data.member_articles %}
-        <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="blog-post-link">
-            <div class="notion-card blog-post-card">
-                <div class="notion-card-title blog-post-title">{{ article.title }}</div>
-                <p class="notion-card-description">{{ article.description }}</p>
+        <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="blog-card">
+            {% if article.image %}
+            <div class="blog-card-image">
+                <img src="{{ article.image | relative_url }}" alt="{{ article.alt | default: article.title }}">
+            </div>
+            {% endif %}
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">{{ article.title }}</h3>
+                <p class="blog-card-description">{{ article.description }}</p>
                 <p class="blog-card-url">shanaiho.itandi.co.jp</p>
             </div>
         </a>
