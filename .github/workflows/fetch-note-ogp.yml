@@ -1,0 +1,46 @@
+name: note OGP画像の取得・更新
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "_data/member_articles.yml"
+      - "_data/blogs.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-ogp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Fetch note OGP images
+        run: python scripts/fetch_note_ogp.py
+
+      - name: Commit updated images and YAML
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/images/note/ _data/member_articles.yml _data/blogs.yml
+          if git diff --staged --quiet; then
+            echo "変更なし。スキップします。"
+          else
+            git commit -m "chore: note記事のOGP画像を取得・更新 [skip ci]"
+            git push
+          fi
