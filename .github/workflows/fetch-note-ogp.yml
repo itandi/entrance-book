@@ -1,22 +1,31 @@
 name: note OGP画像の取得・更新
 
 on:
+  # PRブランチへの変更時: 対象YAMLが変わったタイミングで発火
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - "_data/member_articles.yml"
       - "_data/blogs.yml"
+      - "_data/tech_blog_posts.yml"
+      - "_data/pr_blog_posts.yml"
+
+  # mainへのコミット時: 常に最新記事データを取得してPRを作成
+  push:
+    branches:
+      - main
 
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch-ogp:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout PR branch
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || github.ref_name }}
@@ -33,14 +42,43 @@ jobs:
       - name: Fetch note OGP images
         run: python scripts/fetch_note_ogp.py
 
-      - name: Commit updated images and YAML
+      # --- PR ブランチへの直接コミット (pull_request / workflow_dispatch) ---
+      - name: Commit to PR branch
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/images/note/ _data/member_articles.yml _data/blogs.yml
+          git add assets/images/note/ _data/member_articles.yml _data/blogs.yml _data/tech_blog_posts.yml _data/pr_blog_posts.yml
           if git diff --staged --quiet; then
             echo "変更なし。スキップします。"
           else
             git commit -m "chore: note記事のOGP画像を取得・更新 [skip ci]"
             git push
           fi
+
+      # --- main push 時: 変更があれば自動でPRを作成 ---
+      - name: Create PR from main push
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="chore/note-ogp-update-$(date '+%Y%m%d%H%M%S')"
+          git add assets/images/note/ _data/member_articles.yml _data/blogs.yml _data/tech_blog_posts.yml _data/pr_blog_posts.yml
+
+          if git diff --staged --quiet; then
+            echo "変更なし。PRの作成をスキップします。"
+            exit 0
+          fi
+
+          git checkout -b "$BRANCH"
+          git commit -m "chore: note記事のOGP画像を取得・更新"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "chore: note記事のOGP画像を取得・更新" \
+            --body "mainへのコミットをトリガーに、note記事の最新OGP画像を取得しました。" \
+            --base main \
+            --head "$BRANCH"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
