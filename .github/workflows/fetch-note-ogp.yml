@@ -48,7 +48,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/images/note/ _data/member_articles.yml _data/blogs.yml _data/tech_blog_posts.yml _data/pr_blog_posts.yml
+          git add --ignore-unmatch assets/images/note/ _data/member_articles.yml _data/blogs.yml _data/tech_blog_posts.yml _data/pr_blog_posts.yml
           if git diff --staged --quiet; then
             echo "変更なし。スキップします。"
           else
