@@ -25,6 +25,11 @@ jobs:
   fetch-ogp:
     runs-on: ubuntu-latest
     steps:
+      # CVE-2026-111497（JPCERT at260034）の一時対策。GitHub のランナーイメージが修正されるまで、
+      # 未修正の libbrotli1 を修正版に上げる（public リポジトリのため private な packages の action は使えない）。
+      - name: Patch libbrotli
+        run: sudo apt-get update -q && sudo apt-get install -y --only-upgrade libbrotli1
+
       - name: Checkout
         uses: actions/checkout@v6
         with:
