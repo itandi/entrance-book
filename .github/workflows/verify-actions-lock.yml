@@ -1,0 +1,38 @@
+# public リポジトリからは private な itandi/packages の Reusable Workflow と org secret を使えないため、
+# packages の verify-actions-lock の代わりに、lockfile が全 workflow の uses: を網羅しているかだけを検証する
+name: Verify actions.lock
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-actions-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      # CVE-2026-111497（JPCERT at260034）の一時対策。fetch-note-ogp.yml と同じく、未修正の libbrotli1 を修正版に上げる
+      - name: Patch libbrotli
+        run: sudo apt-get update -q && sudo apt-get install -y --only-upgrade libbrotli1
+
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      # 版と SHA256 は itandi/packages の .github/scripts/install-gh-actions-lock.sh と揃える
+      - name: Install gh-actions-lock
+        env:
+          GH_ACTIONS_LOCK_VERSION: v0.4.1
+          GH_ACTIONS_LOCK_SHA256: 39deb2fe714dbf74b073d8245fc7f3d50cd0eee18d5c0900e9e849ae933ae17e
+        run: |
+          bin="${RUNNER_TEMP}/gh-actions-lock"
+          curl -sSfL "https://github.com/github/gh-actions-lock/releases/download/${GH_ACTIONS_LOCK_VERSION}/linux-amd64" -o "${bin}"
+          echo "${GH_ACTIONS_LOCK_SHA256}  ${bin}" | sha256sum --check
+          sudo install -m 755 "${bin}" /usr/local/bin/gh-actions-lock
+
+      - name: Verify actions.lock
+        run: gh-actions-lock --verify-local
