@@ -31,7 +31,7 @@ jobs:
         run: sudo apt-get update -q && sudo apt-get install -y --only-upgrade libbrotli1
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref || github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
