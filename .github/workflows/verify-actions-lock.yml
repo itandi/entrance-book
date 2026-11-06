@@ -1,5 +1,5 @@
-# public リポジトリからは private な itandi/packages の Reusable Workflow と org secret を使えないため、
-# packages の verify-actions-lock の代わりに、lockfile が全 workflow の uses: を網羅しているかだけを検証する
+# public リポジトリからは社内の private リポジトリの Reusable Workflow と org secret を使えないため、
+# 共通の検証 workflow の代わりに、lockfile が全 workflow の uses: を網羅しているかだけを検証する
 name: Verify actions.lock
 
 on:
@@ -23,7 +23,7 @@ jobs:
         with:
           persist-credentials: false
 
-      # 版と SHA256 は itandi/packages の .github/scripts/install-gh-actions-lock.sh と揃える
+      # SHA256 は GitHub Release の asset digest と同じ値
       - name: Install gh-actions-lock
         env:
           GH_ACTIONS_LOCK_VERSION: v0.4.1
