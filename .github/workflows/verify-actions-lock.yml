@@ -4,8 +4,8 @@ name: Verify actions.lock
 
 on:
   pull_request:
-    paths:
-      - ".github/workflows/**"
+  push:
+    branches: [main]
 
 permissions:
   contents: read
